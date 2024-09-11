@@ -72,28 +72,28 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="additionalServices1" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="Charge1" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="area1" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="squareFootage1" class="tableInput w-100 h-100" type="text" name="service"></td>
                         </tr>
                         <tr>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="additionalServices2" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="Charge2" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="area2" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="squareFootage2" class="tableInput w-100 h-100" type="text" name="service"></td>
                         </tr>
                         <tr>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="additionalServices3" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="Charge3" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="area3" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="squareFootage3" class="tableInput w-100 h-100" type="text" name="service"></td>
                         </tr>
                         <tr>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
-                            <td class="p-0 m-0"><input class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="additionalServices4" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="Charge4" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="area4" class="tableInput w-100 h-100" type="text" name="service"></td>
+                            <td class="p-0 m-0"><input name="squareFootage4" class="tableInput w-100 h-100" type="text" name="service"></td>
                         </tr>
                         <tr>
                             <td colspan="4" class="text-end">
@@ -103,12 +103,35 @@
                     </tbody>
                 </table>
                 </div>
+                <div class="mb-3">
+                    <label for="servicesAcceptedBy" class="form-label"> Additional Services Accepted By </label>
+                    <input type="text" name="servicesAcceptedBy" class="form-control" id="servicesAcceptedBy" placeholder="Additional Services Accepted By ">
+                </div>
+
+                <div class="col-lg-6">
+                    <p class="mt-3 fw-bold"> Customer </p>
+                    <hr class="mb-0 mt-4">
+                    <p class="mb-4">Signature and Date</p>
+                    <hr class="mb-0 mt-4">
+                    <p class="mb-4">Print Name and Title, it's Authorized Representative </p>
+                    <hr class="mb-0 mt-4">
+                    <p class="mb-4">Email Address </p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="mt-3 fw-bold"> Axiom Corp </p>
+                    <hr class="mb-0 mt-4">
+                    <p class="mb-4">Salses Consultant(Signature and Date)</p>
+                    <hr class="mb-0 mt-4">
+                    <p class="mb-4">Print Name and Title, it's Authorized Representative </p>
+                    <hr class="mb-0 mt-4">
+                    <p class="mb-4">Service Start Date</p>
+                </div>
+                <div class="col-lg-12">
+                    <p> Please email or fax signed contract to: </p>
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="servicesAcceptedBy" class="form-label"> Additional Services Accepted By </label>
-               <input type="text" name="servicesAcceptedBy" class="form-control" id="servicesAcceptedBy" placeholder="Additional Services Accepted By ">
-            </div>
+            
 
             
             <button class="btn btn-sm btn-success" type="button" onclick="generateUrl()">Generate URL</button>
