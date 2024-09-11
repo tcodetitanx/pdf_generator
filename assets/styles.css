@@ -6,11 +6,5 @@ body {
 }
 
 .container {
-    max-width: 880px;
-}
-
-.tableInput {
-    border: none;
-    padding: 8px;
-
+    max-width: 920px;
 }

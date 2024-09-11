@@ -1,8 +1,8 @@
 <?php
-require_once('../invoice/tcpdf/tcpdf.php');
+// require_once('../invoice/tcpdf/tcpdf.php');
 
 // Create new PDF document
-$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+// $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // Set document information
 $pdf->SetCreator(PDF_CREATOR);
