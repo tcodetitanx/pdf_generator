@@ -8,6 +8,11 @@
                <input type="text" name="brandName" class="form-control" id="brand" placeholder="brand name">
             </div>
 
+            <div class="mb-3">
+                <label for="brand" class="form-label">Dean Name</label>
+               <input type="text" name="deanName" class="form-control" id="dean" placeholder="brand name">
+            </div>
+
            <div class="mb-3">
                 <label for="customer" class="form-label">Customer Name</label>
                <input type="text" name="customerName" class="form-control" id="customer" placeholder="customer name">
@@ -18,46 +23,14 @@
                <input type="text" name="address" class="form-control" id="streetAddress" placeholder="street Address">
             </div>
 
-           <div class="mb-3">
+            <div class="mb-3">
                 <label for="cityStateZip" class="form-label">City State Zip</label>
-               <input type="text" name="citySateZip" class="form-control" id="cityStateZip" placeholder="City, State, Zip">
+                <input type="text" name="citySateZip" class="form-control" id="cityStateZip" placeholder="City, State, Zip">
             </div>
 
-           <div class="mb-3">
-                <label for="monthlyCharge" class="form-label"> Monthly Service Charge </label>
-               <input type="text" name="monthlyCharge" class="form-control" id="monthlyCharge" placeholder="Monthly Service Charge">
-            </div>
-
-           <div class="mb-3">
-                <label for="monthlyCharge" class="form-label d-block">  Service Days </label>
-                <div class="form-check d-inline-block ms-3">
-                    <input class="form-check-input" type="checkbox" value="" id="monday">
-                    <label class="form-check-label" for="monday">  Monday </label>
-                </div>
-                <div class="form-check d-inline-block ms-3">
-                    <input class="form-check-input" type="checkbox" value="" id="Tuesday" checked>
-                    <label class="form-check-label" for="Tuesday">  Tuesday </label>
-                </div>
-                <div class="form-check d-inline-block ms-3">
-                    <input class="form-check-input" type="checkbox" value="" id="wednesday">
-                    <label class="form-check-label" for="wednesday">  Wednesday </label>
-                </div>
-                <div class="form-check d-inline-block ms-3">
-                    <input class="form-check-input" type="checkbox" value="" id="thursday" checked>
-                    <label class="form-check-label" for="thursday">  Thursday </label>
-                </div>
-                <div class="form-check d-inline-block ms-3">
-                    <input class="form-check-input" type="checkbox" value="" id="friday">
-                    <label class="form-check-label" for="friday">  Friday </label>
-                </div>
-                <div class="form-check d-inline-block ms-3">
-                    <input class="form-check-input" type="checkbox" value="" id="saturday" checked>
-                    <label class="form-check-label" for="saturday">  Satarday </label>
-                </div>
-                <div class="form-check d-inline-block ms-3">
-                    <input class="form-check-input" type="checkbox" value="" id="sunday">
-                    <label class="form-check-label" for="sunday">  Sunday </label>
-                </div>
+            <div class="mb-3">
+                <label for="cityStateZip" class="form-label">Monthly Charges</label>
+               <input type="text" name="monthlyCharges" class="form-control" id="monthlyCharges" placeholder="City, State, Zip">
             </div>
             <button class="btn btn-sm btn-success" type="button" onclick="generateUrl()">Generate URL</button>
         </form>
@@ -69,12 +42,13 @@
             const form = document.getElementById('form');
             const formData = new FormData(form);
             const params = new URLSearchParams(formData);
-            const amountDue = parseFloat(formData.get('amount_due')) || 0;
-            const lateFees = parseFloat(formData.get('late_fees')) || 0;
-            const miscFees = parseFloat(formData.get('misc_fees')) || 0;
-            const total = amountDue + lateFees + miscFees;
-            params.append('total', total.toFixed(2));
-            const url = `https://goaxiomrealty.com/tools/promnote/?${params.toString()}`;
+            const brandName=formData.get('brandName')||"";
+            const customerName=formData.get('customerName')||"";
+            const deanName=formData.get('deanName')||"";
+            const address=formData.get('address')||"";
+            const citySateZip=formData.get('citySateZip')||"";
+            const monthlyCharges=formData.get('monthlyCharges')||"";
+            const url = `http://localhost/generatePdf/generate_pdf?${params.toString()}`;
             document.getElementById('generatedUrl').innerHTML = `<p>Generated URL: <a href="${url}" target="_blank">${url}</a></p>`;
         }
     </script>
