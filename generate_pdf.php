@@ -119,7 +119,9 @@
                     </li>
 
                     <li class="my-3">
-                        Included iiJ the Service Charge wl!| be service, cleaning supplies, and ally equipment which will be furnished by the <?php echo($brandName) ?> franchisee. The sarvlce Charge does not include liners, paper supplles, and toiletries, which can be provided al CUSTOMER‘s expense, at competitive prices. The Service Charge also does not include any use tax, lax on sales, services or supplies, or oilier such tax, whlch taxes shall be paid by CUSTOMER. CUSTOMER agrees to reimburse <?php echo($brandName) ?> the amount of any such laxe i[ pai‹l by <?php echo($brandName) ?> on CUSTOMER's behalf.
+                        Included the Service Charge will be service, cleaning supplies, 
+                        and any equipment which will be furnished by the <?php echo($brandName) ?> franchisee.
+                        The Service Charge does not include liners, paper supplles, and toiletries, which can be provided al CUSTOMER‘s expense, at competitive prices. The Service Charge also does not include any use tax, lax on sales, services or supplies, or oilier such tax, whlch taxes shall be paid by CUSTOMER. CUSTOMER agrees to reimburse <?php echo($brandName) ?> the amount of any such laxe i[ pai‹l by <?php echo($brandName) ?> on CUSTOMER's behalf.
                     </li>
 
                     <li class="my-3">
@@ -848,7 +850,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td> Clean and Disinfecl Telephones </td>
+                            <td> Clean and Disinfect Telephones </td>
                             <td> Clean and sanitize Telephones </td>
                             <td> 1 times per week </td>
                         </tr>
@@ -856,7 +858,7 @@
                             <td style="width:211px; padding-top: 66px;"> Empty Cans and Remove Trash  </td>
                             <td> 
                               <p>
-                                Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any ilem that is in trash cans, designated (rash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the <?php echo $brandName ?> Franchised Business Owner or <?php echo $brandName ?>.
+                              Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the Coverall Franchised Business Owner or Coverall. <?php echo $brandName ?> Franchised Business Owner or <?php echo $brandName ?>.
                               </p>
                             </td>
                             <td style="width:155px; padding-top: 66px;"> 3 times per week </td>
@@ -898,7 +900,7 @@
                         </tr>
                         <tr>
                             <td> Spot Clean Refrigerator  Exterior </td>
-                            <td> Uae all-purpose disinfectant cleaner to wipe smudges and fingerprints from the outside (exterior) of the refrigerator. </td>
+                            <td> Use all-purpose disinfectant cleaner to wipe smudges and fingerprints from the outside (exterior) of the refrigerator. </td>
                             <td> 3 times per week </td>
                         </tr>
                         <tr>
@@ -933,10 +935,7 @@
                             <td> Clean and organize janitor closet. </td>
                             <td> 3 times per week </td>
                         </tr>
-                        <tr>
-                            <td> Clean and organize janitor closet.</td>
-                            <td> 3 times per week  </td>
-                        </tr>
+                     
                         <tr>
                             <td> Turn off lights (as instructed).</td>
                             <td> 3 times per week  </td>
