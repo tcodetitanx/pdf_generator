@@ -115,7 +115,7 @@
                         </p>
                     </li>
                     <li class="my-3">
-                        CUSTOfVlER acknowledges that <?php echo($brandName) ?> wily delegate all <?php echo($brandName) ?> System Services to be performert hereunder to a <?php echo $brandName ?> franchisee and/or subcontractor and <?php echo($brandName) ?> way assign this Service Agreement In Its entirely to a <?php echo($brandName) ?> franchisee and/or subcontractor.
+                        CUSTOMER acknowledges that <?php echo($brandName) ?> will delegate all <?php echo($brandName) ?> System Services to be performert hereunder to a <?php echo $brandName ?> franchisee and/or subcontractor and <?php echo($brandName) ?> way assign this Service Agreement In Its entirely to a <?php echo($brandName) ?> franchisee and/or subcontractor.
                     </li>
 
                     <li class="my-3">
