@@ -37,7 +37,9 @@ $pdf->SetFont('helvetica', '', 12);
 
  $brandName=$_GET['brandName']??"";
  $customerName=$_GET['customerName']??"";
+ $proposalDate=$_GET['proposalDate']??"";
  $deanName=$_GET['deanName']??"";
+ $escName=$_GET['escName']??"";
  $address=$_GET['address']??"";
  $citySateZip=$_GET['citySateZip']??"";
  $monthlyCharges=$_GET['monthlyCharges']??0;
@@ -125,10 +127,10 @@ $pdf->SetFont('helvetica', '', 12);
                     </li>
 
                     <li class="my-3">
-                        All GOVERALL Syslem Services specified in Ihe "<?php echo($brandName) ?> Service Plan’ attached Io this Service Agreement as Exhibit A will be provided to CUSTOMER in a satlsfactory manner. CUSTOMER acI‹nowledges thai only those Services and/or Addilional Services specifically identified in the <?php echo($brandName) ?> Servlce Plan will be provided under Ihis Service Agreement.
+                        All <?php  echo $brandName ?> Syslem Services specified in Ihe "<?php echo($brandName) ?> Service Plan’ attached Io this Service Agreement as Exhibit A will be provided to CUSTOMER in a satlsfactory manner. CUSTOMER acI‹nowledges thai only those Services and/or Addilional Services specifically identified in the <?php echo($brandName) ?> Servlce Plan will be provided under Ihis Service Agreement.
                     </li>
                     <li class="my-3">
-                        All LOVERALL fronclJisaes have successfully completed <?php echo($brandName) ?>‘s comprehensive training program and are required lo carry Insurance and a janitorlal bond.
+                        All <?php  echo $brandName ?> franchises have successfully completed <?php echo($brandName) ?>‘s comprehensive training program and are required lo carry Insurance and a janitorlal bond.
                     </li>
                     <li class="my-3">
                         Additional services, ‹Jot included in <?php echo($brandName) ?>'s Service Oharge, to be perfanred upon request, priced par occurrence, at CUSTON1EFI'S expense, Include.
@@ -364,11 +366,11 @@ $pdf->SetFont('helvetica', '', 12);
                 </div>
                 <div class="col-lg-12 text-center mt-5">
                     <p class="heading fw-bold">By:</p>
-                    <p class="mb-0"> Jordan Ritchie <br> Executive Sales Consultant <br>
+                    <p class="mb-0"> <?php  echo $escName ?> <br> Executive Sales Consultant <br>
                         <?php echo $brandName ?> North America
                     </p>
                     <p class="mt-5 mb-0"> Date: </p>
-                    <p> 6 / 26 /19</p>
+                    <p> <?php  echo $proposalDate ?></p>
                 </div>
             </div>
        <hr>
@@ -391,7 +393,7 @@ $pdf->SetFont('helvetica', '', 12);
                 </p>
                 <p>
                     Sincerely, <br>
-                    Jordan Ritchie  <br>
+                    <?php  echo $escName ?>  <br>
                     <?php echo $brandName ?> North America
                 </p>
             </div>
