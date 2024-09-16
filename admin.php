@@ -60,7 +60,7 @@
             const proposalDate=formData.get('proposalDate')||"";
             const citySateZip=formData.get('citySateZip')||"";
             const monthlyCharges=formData.get('monthlyCharges')||"";
-            const url = `http://localhost/generatePdf/generate_pdf?${params.toString()}`;
+            const url = `http://localhost/generatePdf/index?${params.toString()}`;
             document.getElementById('generatedUrl').innerHTML = `<p>Generated URL: <a href="${url}" target="_blank">${url}</a></p>`;
         }
     </script>
