@@ -1,7 +1,7 @@
 
 <?php
+require_once('tcpdf/tcpdf.php');
 
-require_once('./tcpdf/tcpdf.php');
 // Create new PDF document
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
@@ -12,26 +12,26 @@ $pdf->SetTitle('Promissory Note and Eviction Notice');
 $pdf->SetSubject('Promissory Note and Eviction Notice Agreement');
 $pdf->SetKeywords('Promissory Note, Eviction Notice, Agreement, Legal Document');
 
-// // Remove default header/footer
+// Remove default header/footer
 $pdf->setPrintHeader(false);
 $pdf->setPrintFooter(false);
 
-// // Set default monospaced font
+// Set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
-// // Set margins
+// Set margins
 $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 
-// // Set auto page breaks
+// Set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
-// // Set image scale factor
+// Set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-// // Add a page
+// Add a page
 $pdf->AddPage();
 
-// // Set font
+// Set font
 $pdf->SetFont('helvetica', '', 12);
 // Get data from GET parameters
 
@@ -43,19 +43,8 @@ $pdf->SetFont('helvetica', '', 12);
  $address=$_GET['address']??"";
  $citySateZip=$_GET['citySateZip']??"";
  $monthlyCharges=$_GET['monthlyCharges']??0;
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</head>
-<body>
+ // Create the content
+$content = <<<EOD
     <div class="container border rounded">
         <div class="row">
             <div class="col-lg-12 p-4">
@@ -64,23 +53,23 @@ $pdf->SetFont('helvetica', '', 12);
         </div>
         <div class="row mt-4">
             <div class="col-lg-12">
-                <h4 class="heading fw-bold"><?php echo($brandName) ?></h4>
+                <h4 class="heading fw-bold"> $brandName  </h4>
                 <p class="mt-2">
-                    The Undersigned (<?php echo $customerName ?>) hereby accepts the proposal of Melton Franchise System, Inc, <?php echo($brandName) ?>,
-                    and the parties agree that <?php echo($brandName) ?>'S franchises and/or subcontractors will supply <?php echo($brandName) ?> System Services for
+                    The Undersigned (  $customerName  ) hereby accepts the proposal of Melton Franchise System, Inc,  $brandName  ,
+                    and the parties agree that  $brandName  'S franchises and/or subcontractors will supply  ($brandName   System Services for
                     CUSTOMER'S permises located at:
                 </p>
                 <ul class="ps-3">
-                    <li>Customer: <span id="customer"> <?php echo $customerName ?> </span></li>
-                    <li>Street Address: <span id="customer"> <?php echo $address ?> </span></li>
-                    <li>City State Zip: <span id="customer"><?php echo $citySateZip ?> </span></li>
+                    <li>Customer: <span id="customer">   $customerName   </span></li>
+                    <li>Street Address: <span id="customer">   $address   </span></li>
+                    <li>City State Zip: <span id="customer">  $citySateZip   </span></li>
                 </ul>
 
                 <p class="">Upon the following term</p>
 
                 <ol class="ps-3">
                     <li>Monthly Services Charge: 
-                        <p class="ms-4"> <?php echo $monthlyCharges ?>$ per month, plus taxes, if applicable; to include 3 times(s) per week services. Initial</p>
+                        <p class="ms-4">   $monthlyCharges  $ per month, plus taxes, if applicable; to include 3 times(s) per week services. Initial</p>
                         <div class="mb-3">
                             <label for="monthlyCharge" class="form-label d-block">  Service Days </label>
                             <div class="form-check d-inline-block ms-3">
@@ -117,23 +106,23 @@ $pdf->SetFont('helvetica', '', 12);
                         </p>
                     </li>
                     <li class="my-3">
-                        CUSTOMER acknowledges that <?php echo($brandName) ?> will delegate all <?php echo($brandName) ?> System Services to be performert hereunder to a <?php echo $brandName ?> franchisee and/or subcontractor and <?php echo($brandName) ?> way assign this Service Agreement In Its entirely to a <?php echo($brandName) ?> franchisee and/or subcontractor.
+                        CUSTOMER acknowledges that  ($brandName   will delegate all  ($brandName   System Services to be performert hereunder to a   $brandName  franchisee and/or subcontractor and  ($brandName   way assign this Service Agreement In Its entirely to a  ($brandName   franchisee and/or subcontractor.
                     </li>
 
                     <li class="my-3">
                         Included the Service Charge will be service, cleaning supplies, 
-                        and any equipment which will be furnished by the <?php echo($brandName) ?> franchisee.
-                        The Service Charge does not include liners, paper supplles, and toiletries, which can be provided al CUSTOMER‘s expense, at competitive prices. The Service Charge also does not include any use tax, lax on sales, services or supplies, or oilier such tax, whlch taxes shall be paid by CUSTOMER. CUSTOMER agrees to reimburse <?php echo($brandName) ?> the amount of any such laxe i[ pai‹l by <?php echo($brandName) ?> on CUSTOMER's behalf.
+                        and any equipment which will be furnished by the  ($brandName   franchisee.
+                        The Service Charge does not include liners, paper supplles, and toiletries, which can be provided al CUSTOMER‘s expense, at competitive prices. The Service Charge also does not include any use tax, lax on sales, services or supplies, or oilier such tax, whlch taxes shall be paid by CUSTOMER. CUSTOMER agrees to reimburse  ($brandName   the amount of any such laxe i[ pai‹l by  ($brandName   on CUSTOMER's behalf.
                     </li>
 
                     <li class="my-3">
-                        All <?php  echo $brandName ?> Syslem Services specified in Ihe "<?php echo($brandName) ?> Service Plan’ attached Io this Service Agreement as Exhibit A will be provided to CUSTOMER in a satlsfactory manner. CUSTOMER acI‹nowledges thai only those Services and/or Addilional Services specifically identified in the <?php echo($brandName) ?> Servlce Plan will be provided under Ihis Service Agreement.
+                        All   $brandName  Syslem Services specified in Ihe " ($brandName   Service Plan’ attached Io this Service Agreement as Exhibit A will be provided to CUSTOMER in a satlsfactory manner. CUSTOMER acI‹nowledges thai only those Services and/or Addilional Services specifically identified in the  ($brandName   Servlce Plan will be provided under Ihis Service Agreement.
                     </li>
                     <li class="my-3">
-                        All <?php  echo $brandName ?> franchises have successfully completed <?php echo($brandName) ?>‘s comprehensive training program and are required lo carry Insurance and a janitorlal bond.
+                        All   $brandName  franchises have successfully completed  ($brandName  ‘s comprehensive training program and are required lo carry Insurance and a janitorlal bond.
                     </li>
                     <li class="my-3">
-                        Additional services, ‹Jot included in <?php echo($brandName) ?>'s Service Oharge, to be perfanred upon request, priced par occurrence, at CUSTON1EFI'S expense, Include.
+                        Additional services, ‹Jot included in  ($brandName  's Service Oharge, to be perfanred upon request, priced par occurrence, at CUSTON1EFI'S expense, Include.
                     </li>
                
                     <table class="table table-bordered rounded mt-4">
@@ -198,37 +187,37 @@ $pdf->SetFont('helvetica', '', 12);
                         <P>
                         (b) Termination/Notice: If a party to this Service Agreement fails to perform its obligations (the "non-performing party"), the party claiming non-performance shall send the non-performing party written notice, specifying the manner of non-performance. This notice will provide that the non-performing parley shall have lifteen (15) days from receipt of the notice to cure or correct the items of non-performance (the "Cure Period"). If these items are not corrected or cured within the Cure Period, the claiming party may issue a thirty (30) day written notice, of termination and/or pursue other available remedies for default.
                            <br>
-                           If the CUSTOMER's notice under this 117(b) concerns service Issues, the CUSTOMER shall permit the <?php  echo $brandName ?> or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a <?php echo $brandName ?> representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle <?php  echo $brandName ?> to collect the full amount due through the Term of this Service Agreement.
+                           If the CUSTOMER's notice under this 117(b) concerns service Issues, the CUSTOMER shall permit the   $brandName  or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a   $brandName  representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle   $brandName  to collect the full amount due through the Term of this Service Agreement.
                         </P>
                         <p>
-                        (c) Notwithstanding the above, <?php echo($brandName) ?> may, but shall not be obligated to, terminate this Service Agreement immediately for non-payment by CUSTOMER of Service Charges due.
+                        (c) Notwithstanding the above,  ($brandName   may, but shall not be obligated to, terminate this Service Agreement immediately for non-payment by CUSTOMER of Service Charges due.
                         </p>
                     </li>
                     <li class="my-3">
-                        The Service Charge will remain in effect for one year unless there are changes in the original specifications for the premises. In the event of such changes, CUSTOMER will advise <?php echo $brandName ?> accordingly, and an adjustment in the Service Charge, as agreed to by the parties, will be made.
+                        The Service Charge will remain in effect for one year unless there are changes in the original specifications for the premises. In the event of such changes, CUSTOMER will advise   $brandName  accordingly, and an adjustment in the Service Charge, as agreed to by the parties, will be made.
                     </li>
                     <li class="my-3">
-                      CUSTOMER agrees that it will not employ or contract with any <?php echo $brandName ?>  employee, franchisee, or any of the franchisee's employees during the term of this Service Agreement or for one hundred and eighty (180) days after termination of this Service Agreement, without <?php echo $brandName ?>'s written consent.
+                      CUSTOMER agrees that it will not employ or contract with any   $brandName   employee, franchisee, or any of the franchisee's employees during the term of this Service Agreement or for one hundred and eighty (180) days after termination of this Service Agreement, without   $brandName 's written consent.
                     </li>
                     <li class="my-3">
-                       <?php echo $brandName ?> will bill CUSTOMER monthly, and CUSTOMER agrees to pay <?php echo $brandName ?> the amount that is due and owing under the terms of this Service Agreement within 10 days of billing date. Late payments will incur service and finance charges. In the event of default on payment, CUSTOMER agrees to pay <?php echo $brandName ?>'s attorney's fees and costs for collection.
+                         $brandName  will bill CUSTOMER monthly, and CUSTOMER agrees to pay   $brandName  the amount that is due and owing under the terms of this Service Agreement within 10 days of billing date. Late payments will incur service and finance charges. In the event of default on payment, CUSTOMER agrees to pay   $brandName 's attorney's fees and costs for collection.
                     </li>
                     <li class="my-3">
-                       Services shall be performed as stated in the <?php  echo $brandName ?> Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.
+                       Services shall be performed as stated in the   $brandName  Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.
                     </li>
                     <li class="my-3">
-                      If "Additional Special Services" are included in the <?php  echo $brandName ?> Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included In CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.
+                      If "Additional Special Services" are included in the   $brandName  Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included In CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.
                     </li>
                     <li class="my-3">
-                      The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a <?php  echo $brandName ?>, a subcontractor or another third party.
+                      The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a   $brandName , a subcontractor or another third party.
                     </li>
                     <li class="my-3">
                        This Service Agreement and attached exhibits constitute the complete agreement of the parties concerning the provision of
                         cleaning services to the CUSTOMER, and supersedes all other prior or contemporaneous agreements between the parties,
                         whether written or oral, on the same subject. No waiver or modification of this Service Agreement shall be valid unless in writing
-                        and executed by <?php  echo $brandName ?> and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order
-                        or other form subsequently submitted by CUSTOMER to <?php  echo $brandName ?> becomes a part of this Service Agreement, and
-                        <?php  echo $brandName ?> shall not be bound by any such terms and conditions
+                        and executed by   $brandName  and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order
+                        or other form subsequently submitted by CUSTOMER to   $brandName  becomes a part of this Service Agreement, and
+                          $brandName  shall not be bound by any such terms and conditions
                     </li>
                 </ol>
             </div>
@@ -263,9 +252,9 @@ $pdf->SetFont('helvetica', '', 12);
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <h4 class="heading fw-bold"> <?php echo $brandName ?> Safety anal Security Bocumerit </h4>
+                <h4 class="heading fw-bold">   $brandName  Safety anal Security Bocumerit </h4>
                 <p class="mt-2">
-                   The <?php  echo $brandName ?> System places great emphasis on safety and security. <?php  echo $brandName ?> Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner. 
+                   The   $brandName  System places great emphasis on safety and security.   $brandName  Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner. 
                 </p>
                 <p>
                   To help us support your safety and security measures, please answer the questions below.
@@ -283,7 +272,7 @@ $pdf->SetFont('helvetica', '', 12);
                     <ol class="ps-3">
                         <li>
                             <p class="mb-1">
-                               Is protective equipment required in any parts of your facility where the <?php  echo $brandName ?> Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
+                               Is protective equipment required in any parts of your facility where the   $brandName  Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday" checked>
@@ -299,7 +288,7 @@ $pdf->SetFont('helvetica', '', 12);
                         </li>
                         <li class="mt-5">
                             <p class="mb-1">
-                               Will the <?php  echo $brandName ?> Business Owner need to disarm and arm a building security system?
+                               Will the   $brandName  Business Owner need to disarm and arm a building security system?
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday" checked>
@@ -313,7 +302,7 @@ $pdf->SetFont('helvetica', '', 12);
 
                         <li class="mt-5">
                             <p class="mb-1">
-                                 Will the <?php  echo $brandName ?> Business Owner be given a set of keys for your facility?
+                                 Will the   $brandName  Business Owner be given a set of keys for your facility?
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday">
@@ -332,13 +321,13 @@ $pdf->SetFont('helvetica', '', 12);
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday">
                                 <label class="form-check-label" for="monday">
-                                I am aware of Asbestos in the facility where the <?php  echo $brandName ?> Franchisad Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the <?php  echo $brandName ?> Business.
+                                I am aware of Asbestos in the facility where the   $brandName  Franchisad Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the   $brandName  Business.
                                  </label>
                             </div>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="Tuesday" checked>
                                 <label class="form-check-label" for="Tuesday">
-                                  I am not aware of Asbestos in the facility where the <?php  echo $brandName ?> Business will be providing services.
+                                  I am not aware of Asbestos in the facility where the   $brandName  Business will be providing services.
                                 </label>
                             </div>
                         </li>
@@ -366,11 +355,11 @@ $pdf->SetFont('helvetica', '', 12);
                 </div>
                 <div class="col-lg-12 text-center mt-5">
                     <p class="heading fw-bold">By:</p>
-                    <p class="mb-0"> <?php  echo $escName ?> <br> Executive Sales Consultant <br>
-                        <?php echo $brandName ?> North America
+                    <p class="mb-0">   $escName  <br> Executive Sales Consultant <br>
+                          $brandName  North America
                     </p>
                     <p class="mt-5 mb-0"> Date: </p>
-                    <p> <?php  echo $proposalDate ?></p>
+                    <p>   $proposalDate  </p>
                 </div>
             </div>
        <hr>
@@ -380,21 +369,21 @@ $pdf->SetFont('helvetica', '', 12);
                 <img class="img-responsive pe-2" style="width: 100%; margin-top: 55px;" src="assets/images/stamp-logo.png" alt="">
             </div>
             <div class="col-lg-12 px-4">
-                <p>Dear <?php echo $deanName ?>,</p>
+                <p>Dear   $deanName ,</p>
                 <p>Thank you for the opportunity to present this proposal, which we have customized to your needs and requests.</p>
                 <p>
-                  The <?php  echo $brandName ?> Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the <?php  echo $brandName ?>® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.
+                  The   $brandName  Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the   $brandName ® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.
                 </p>
                 <p>
-                   Your <?php  echo $brandName ?> Service Plan and Service Agreernent are attached. Please review them to learn exactly how the <?php  echo $brandName ?> Program will meet and exceed your expectations.
+                   Your   $brandName  Service Plan and Service Agreernent are attached. Please review them to learn exactly how the   $brandName  Program will meet and exceed your expectations.
                 </p>
                 <p>
                     Thank you again We look forward to working with you! 
                 </p>
                 <p>
                     Sincerely, <br>
-                    <?php  echo $escName ?>  <br>
-                    <?php echo $brandName ?> North America
+                      $escName   <br>
+                      $brandName  North America
                 </p>
             </div>
             <div class="col-lg-3"> </div>
@@ -424,7 +413,7 @@ $pdf->SetFont('helvetica', '', 12);
                     <label class="form-check-label" for="Kitchen">  Kitchen </label>
                 </div>
                 <p class="ms-5 my-4">
-                <?php  echo $brandName ?> Health-Based Cleaning System uses scientifically proven cleaning supplies, tools and techniques to ensure that these important priorities will be handled properly.
+                  $brandName  Health-Based Cleaning System uses scientifically proven cleaning supplies, tools and techniques to ensure that these important priorities will be handled properly.
                 </p>
             </div>
             <div class="col-lg-7">
@@ -432,14 +421,14 @@ $pdf->SetFont('helvetica', '', 12);
             </div>
             <div class="col-lg-12">
                 <h3 class="border-bottom border-black d-inline-block">
-                    The <?php echo $brandName ?> Difference
+                    The   $brandName  Difference
                 </h3>
                 <div class="form-check ms-3">
                     <input class="form-check-input" type="checkbox" value="" id="office">
                     <label class="form-check-label" for="office">  Get the best value for your cleaning budget </label>
                 </div>
                 <p>
-                  A lot has changed in the way that cleaning is done today. The work can be much faster than in the past. <?php  echo $brandName ?> leads the industry in finding and using the best tools, techniques and training to give you a cleaning schedule that delivers more value within your budget.
+                  A lot has changed in the way that cleaning is done today. The work can be much faster than in the past.   $brandName  leads the industry in finding and using the best tools, techniques and training to give you a cleaning schedule that delivers more value within your budget.
                 </p>
 
                 <div class="form-check ms-3">
@@ -449,7 +438,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </label>
                 </div>
                 <p>
-                   <?php  echo $brandName ?> Owners use multi-filtration vacuums to improve indoor air quality by removing 99.97% of dust, dirt, bacteria, mold, yeast, and particles down to 0.3 microns. In contrast, traditional commercial vacuums return 40% of the dirt they pick up directly into the air.
+                     $brandName  Owners use multi-filtration vacuums to improve indoor air quality by removing 99.97% of dust, dirt, bacteria, mold, yeast, and particles down to 0.3 microns. In contrast, traditional commercial vacuums return 40% of the dirt they pick up directly into the air.
                 </p>
 
                 <div class="form-check ms-3">
@@ -459,7 +448,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </label>
                 </div>
                 <p>
-                    <?php  echo $brandName ?> uses environmentally safe, hospital-grade disinfectant cleaning products, which are recommended by the Centers for Disease Control (CDC) and many medical studies to limit the spread of germs, especially in bathrooms.
+                      $brandName  uses environmentally safe, hospital-grade disinfectant cleaning products, which are recommended by the Centers for Disease Control (CDC) and many medical studies to limit the spread of germs, especially in bathrooms.
                 </p>
 
                 <div class="form-check ms-3">
@@ -469,7 +458,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </label>
                 </div>
                 <p>
-                    Your <?php  echo $brandName ?> Owner was trained and certified to use <?php  echo $brandName ?> Health-Based Cleaning System so that you get consistent, high-quality results. The cleaning team will use a log book to communicate notes or questions to you, and you will have direct access to them, to your local <?php  echo $brandName ?> office, and to phone support 24 hours a day.
+                    Your   $brandName  Owner was trained and certified to use   $brandName  Health-Based Cleaning System so that you get consistent, high-quality results. The cleaning team will use a log book to communicate notes or questions to you, and you will have direct access to them, to your local   $brandName  office, and to phone support 24 hours a day.
                 </p>
 
                 <div class="form-check ms-3">
@@ -479,7 +468,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </label>
                 </div>
                 <p>
-                   The <?php  echo $brandName ?> Color-Coding for Health® Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross- contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.
+                   The   $brandName  Color-Coding for Health® Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross- contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.
                 </p>
             </div>
         </div> <hr>
@@ -706,7 +695,7 @@ $pdf->SetFont('helvetica', '', 12);
 
           <div class="row my-5 ">
             <div class="col-lg-12">
-                <h3> <?php echo $brandName ?> services, and how often they will be done at your facility.</h3>
+                <h3>   $brandName  services, and how often they will be done at your facility.</h3>
             </div>
             <div class="col-lg-12 text-start mt-4">
                 <img class="img-responsive" style="width: 20%;" src="assets/images/Picture5.png" alt="">
@@ -865,9 +854,9 @@ $pdf->SetFont('helvetica', '', 12);
                         <tr>
                             <td style="width:211px; padding-top: 66px;"> Empty Cans and Remove Trash  </td>
                             <td> 
-                              <p>
-                              Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the <?php  echo $brandName ?> Business Owner or <?php  echo $brandName ?>.
-                              </p>
+                            <p>
+                               Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the   $brandName  Business Owner or   $brandName 
+                             </p>
                             </td>
                             <td style="width:155px; padding-top: 66px;"> 3 times per week </td>
                         </tr>
@@ -981,18 +970,14 @@ $pdf->SetFont('helvetica', '', 12);
             </div>
         </div>
     </div>
-</body>
-</html>
-
-<!--  
+ EOD;
 // Write the content
-// $pdf->writeHTML($content, true, false, true, false, '');
+$pdf->writeHTML($content, true, false, true, false, '');
 
 // // Add footer with legal verbiage
-// $pdf->SetY(-15);
-// $pdf->SetFont('helvetica', '', 8);
-// $pdf->MultiCell(0, 10, 'Copyright 2010-2020. This form verbiage provided by the Law Offices of Jeremy M. Shorts, LLC and may be used by landlords within the state of Utah. Use of this form shall not constitute legal representation by this firm. Visit www.utahevictionlaw.com for more landlord forms and materials. Phone: 801-610-9879. Rev 5/12/2020', 0, 'C');
-
+$pdf->SetY(-15);
+$pdf->SetFont('helvetica', '', 8);
+$pdf->MultiCell(0, 10, 'Copyright 2010-2020. This form verbiage provided by the Law Offices of Jeremy M. Shorts, LLC and may be used by landlords within the state of Utah. Use of this form shall not constitute legal representation by this firm. Visit www.utahevictionlaw.com for more landlord forms and materials. Phone: 801-610-9879. Rev 5/12/2020', 0, 'C');
+ob_end_clean(); 
 // // Output the PDF
-// $pdf->Output('promissory_note_and_eviction_notice.pdf', 'I');
--->
+$pdf->Output('promissory_note_and_eviction_notice.pdf', 'I');

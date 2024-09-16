@@ -34,21 +34,21 @@ $pdf->AddPage();
 $pdf->SetFont('helvetica', '', 12);
 
 // Get data from GET parameters
-$issuer_name = $_GET['issuer_name'];
-$issuer_address = $_GET['issuer_address'];
-$issuer_phone = $_GET['issuer_phone'];
-$name = $_GET['name'];
-$address = $_GET['address'];
-$phone = $_GET['phone'];
-$amount_due = $_GET['amount_due'];
-$late_fees = $_GET['late_fees'];
-$misc_fees = $_GET['misc_fees'];
-$misc_fees_description = $_GET['misc_fees_description'];
-$total = $_GET['total'];
-$notice_date = $_GET['notice_date'];
-$eviction_date = $_GET['eviction_date'];
-$signature = $_GET['signature'];
-$signatureDate = $_GET['signatureDate'];
+$issuer_name = $_GET['issuer_name']??"";
+$issuer_address = $_GET['issuer_address']??"";
+$issuer_phone = $_GET['issuer_phone']??"";
+$name = $_GET['name']??"";
+$address = $_GET['address']??"";
+$phone = $_GET['phone']??"";
+$amount_due = $_GET['amount_due']??"";
+$late_fees = $_GET['late_fees']??"";
+$misc_fees = $_GET['misc_fees']??"";
+$misc_fees_description = $_GET['misc_fees_description']??"";
+$total = $_GET['total']??"";
+$notice_date = $_GET['notice_date']??"";
+$eviction_date = $_GET['eviction_date']??"";
+$signature = $_GET['signature']??"";
+$signatureDate = $_GET['signatureDate']??"";
 
 // Create the content
 $content = <<<EOD
@@ -145,4 +145,4 @@ $pdf->SetFont('helvetica', '', 8);
 $pdf->MultiCell(0, 10, 'Copyright 2010-2020. This form verbiage provided by the Law Offices of Jeremy M. Shorts, LLC and may be used by landlords within the state of Utah. Use of this form shall not constitute legal representation by this firm. Visit www.utahevictionlaw.com for more landlord forms and materials. Phone: 801-610-9879. Rev 5/12/2020', 0, 'C');
 
 // Output the PDF
-$pdf->Output('promissory_note_and_eviction_notice.pdf', 'I');
+$pdf->Output(name: 'promissory_note_and_eviction_notice.pdf', dest: 'I');
