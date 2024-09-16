@@ -969,6 +969,7 @@ $pdf->SetFont('helvetica', '', 12);
     </div>
 </body>
 </html>
+
 <!--  
 // Write the content
 // $pdf->writeHTML($content, true, false, true, false, '');
