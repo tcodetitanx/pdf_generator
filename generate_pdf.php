@@ -1,38 +1,38 @@
 
 <?php
 
-//require_once('../invoice/tcpdf/tcpdf.php');
+require_once('./tcpdf/tcpdf.php');
 // Create new PDF document
-// $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // Set document information
-// $pdf->SetCreator(PDF_CREATOR);
-// $pdf->SetAuthor('Your Company Name');
-// $pdf->SetTitle('Promissory Note and Eviction Notice');
-// $pdf->SetSubject('Promissory Note and Eviction Notice Agreement');
-// $pdf->SetKeywords('Promissory Note, Eviction Notice, Agreement, Legal Document');
+$pdf->SetCreator(PDF_CREATOR);
+$pdf->SetAuthor('Your Company Name');
+$pdf->SetTitle('Promissory Note and Eviction Notice');
+$pdf->SetSubject('Promissory Note and Eviction Notice Agreement');
+$pdf->SetKeywords('Promissory Note, Eviction Notice, Agreement, Legal Document');
 
 // // Remove default header/footer
-// $pdf->setPrintHeader(false);
-// $pdf->setPrintFooter(false);
+$pdf->setPrintHeader(false);
+$pdf->setPrintFooter(false);
 
 // // Set default monospaced font
-// $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // // Set margins
-// $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 
 // // Set auto page breaks
-// $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
 // // Set image scale factor
-// $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 // // Add a page
-// $pdf->AddPage();
+$pdf->AddPage();
 
 // // Set font
-// $pdf->SetFont('helvetica', '', 12);
+$pdf->SetFont('helvetica', '', 12);
 // Get data from GET parameters
 
  $brandName=$_GET['brandName']??"";
@@ -190,37 +190,43 @@
 
                     <li class="my-3">
                         <P>
-                            (a) The lerm of lhls Service AgreenJen\ is [or one (1) year. J”his one year perlod shall begin on the aate servlces are scheduled to begin. This Service Agreement shall auIoina\icaIly sxleiJd for addl tiol\aI one (1) year periods, unless at least thirty (30) days prior to each anniversary of lhe date services are sche‹IuIed to begin, either pzirty gives the olher written nolice of its intent not to relJs\v.
+                        (a) The term of this Service Agreement is for one (1) year. This one year period shall begin on the date services are scheduled to begin.
+                        This Service Agreement shall automatically extend for additional one (1) year periods, unless at least thirty (30) days prior to each anniversary of the date services are scheduled to begin, either party gives the other written notice of its intent not to renew.
                         </P>
                         <P>
-                            (b)	Tcrlrinetioi1/h/otice: !/ a party to thls Service ég ee nent fai!s to perforée ils obligations (lhe "non-performlng party' ), the party clai nlng non-performance shall send Itie non-performing patty wrilten nolice, upoci[ylng the t+\a‹Jner of non-performance, This notice will provide that the non-perfoiming parly shall {lave fifteen (15) days [rom ieceipt ofl the notice to cure or correct tj\e items of non-performance (the “Cr‹re Period”). If thèse il ends are not correcfad or curecl wlthin the Cuie P-enod, ttc ctaiming party may issue g tl4Ïrty (30) day writlan notice of termination nnd/or pursue otlJer nvallable remedles foi default.
+                        (b) Termination/Notice: If a party to this Service Agreement fails to perform its obligations (the "non-performing party"), the party claiming non-performance shall send the non-performing party written notice, specifying the manner of non-performance. This notice will provide that the non-performing parley shall have lifteen (15) days from receipt of the notice to cure or correct the items of non-performance (the "Cure Period"). If these items are not corrected or cured within the Cure Period, the claiming party may issue a thirty (30) day written notice, of termination and/or pursue other available remedies for default.
                            <br>
-                            If the CUSTOMER's ‹Jo[ice under IlJi6 }7(b) concei its service issues, the CUSTOMER shall pei mit Ihe <?php echo($brandName) ?> franchises or subcoiJli actor access to the Dremises during the Cure Period Io cr re the service issue; and shall also accompa Jy a <?php echo($brandName) ?> reprssentalive on an Incpeclion of the premlses drtr|lJg the fifteen (IN) day crlre periorf. Failure fo comply y'z‹ll entitle COV EFtALL to collect the frill amount due through the Tei m of lhls Service Agreement,
+                           If the CUSTOMER's notice under this 117(b) concerns service Issues, the CUSTOMER shall permit the COVERALL franchisee or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a <?php echo $brandName ?> representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle COVERALL to collect the full amount due through the Term of this Service Agreement.
                         </P>
                         <p>
-                            (b)	Notwllhstanding the aboye, <?php echo $brandName ?> way, but shall not be obligated to, ter niilate this Sen/ice AgreemenI imnJedialely for now-payment by CUSTQNIER of Service Charges due.
+                        (c) Notwithstanding the above, <?php echo($brandName) ?> may, but shall not be obligated to, terminate this Service Agreement immediately for non-payment by CUSTOMER of Service Charges due.
                         </p>
                     </li>
                     <li class="my-3">
-                        The S+i vice Ghni'ge will remain in effect foi one year unless lheie aro changes in lha origlnal specificallons for the prelnlses, h4 the evenI of such clJangss, CUSTOMER will advise <?php echo($brandName) ?> accordingly, a»rl an adjusfiJ1enI in lhe Service Chai'ge, as agreed to fry the parties, will be made.
+                        The Service Charge will remain in effect for one year unless there are changes in the original specifications for the premises. In the event of such changes, CUSTOMER will advise <?php echo $brandName ?> accordingly, and an adjustment in the Service Charge, as agreed to by the parties, will be made.
                     </li>
                     <li class="my-3">
-                        CUSTONIEF agrees that it wlll not employ or commit with any <?php echo($brandName) ?> employee, franchi8ee, or any of the franchisee*s employees during IIJ+ tarns of this Serylce AgreemeiJl or for ol1e hundi ed and eighly (180) days alter lerminallon of lhis See/ice Agreement, without <?php echo $brandName ?> writ(en consent.
+                      CUSTOMER agrees that it will not employ or contract with any <?php echo $brandName ?>  employee, franchisee, or any of the franchisee's employees during the term of this Service Agreement or for one hundred and eighty (180) days after termination of this Service Agreement, without <?php echo $brandName ?>'s written consent.
                     </li>
                     <li class="my-3">
-                        <?php echo $brandName ?> will bill CUSTOhlER mnMhly, and CUSTO/yIER agrees lo pay <?php echo $brandName ?> lhe amount What is due alad owing under the terms of this Service Agiaement within 10 days of billing date. Late payments will in«ur service and finance charges, In the event of defatjlt on payn1ei\t, CUSTOU1ER a¿lrees to pay <?php echo $brandName ?>’S a(torney's fees and costs for r;oIIection,
+                       <?php echo $brandName ?> will bill CUSTOMER monthly, and CUSTOMER agrees to pay <?php echo $brandName ?> the amount that is due and owing under the terms of this Service Agreement within 10 days of billing date. Late payments will incur service and finance charges. In the event of default on payment, CUSTOMER agrees to pay <?php echo $brandName ?>'s attorney's fees and costs for collection.
                     </li>
                     <li class="my-3">
-                        Services shall be pe formed as statad in the <?php echo $brandName ?> Sei Ice Pla‹ attached Io thls Sei nice Agreement with the exceptiol4 of tile following six (6) legal holidays: New Year‘s Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charga credits will he issued lor these holidays. However, service can be provided on IhesB holidays at an additional cost If required. Sen/ices shall be scheduled during the hours approved or directed by manager/owi1er.
+                       Services shall be performed as stated in the Coverall Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.
                     </li>
                     <li class="my-3">
-                        If“Addillonal Special Sei'vices” are included in tile <?php echo $brandName ?> Service Plan attached to this Service Agreement, and if CUSTOMER cancels ally periocfic Speclal Services described IT›erein for w)Jich a prorated monllJly charge is included In CUSTOfvlER'S total monthly Service Charge, any amount owing by OUSTOfvlER for Sgecjal Services performed prior to the cancellation shall be payable in full no laler than five (5) days aftar lhe cancellation.
+                      If "Additional Special Services" are included in the Coverall Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included In CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.
                     </li>
                     <li class="my-3">
-                        The underslgned wai i am and represent that they have full authority to enter inlo lhls Service Agreement, and that it will he binding upon the parties and fheir tespeclive successors and assigns. SpecificalJy, CUSTOMER acl‹nowlerlges that thig Service AgreenJen( may be assigned In Its enlirety Io a <?php echo $brandName ?> fraiJchlsea, a subcontractor oi another Ihlrd party.
+                      The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a COVERALL franchisee, a subcontractor or another third party.
                     </li>
                     <li class="my-3">
-                        This Service Agi eemenl and attached exhibits COhslit‹ite the complete agreement of the parties concerning the provision of cleanint/ services Io the CUSTOMER, and supersedes all other piior or col\tenJporaneous agreerilents between the pa tles, whether \witten or oral, on the same subject. No waiver or /rodificalloP of this Service Agreement shall be valld uiJless in writing and executed by <?php echo $brandName ?> an‹l CUSTOMER Additionally, in no evenl shall the l+lms and conditions of any purchase order or other for m subsequently submitted by CUSTOMER to CCVERALL becomes a part of this Service Agreement, and COV RALL shall nol be hound by any such terms zind conditions.
+                       This Service Agreement and attached exhibits constitute the complete agreement of the parties concerning the provision of
+                        cleaning services to the CUSTOMER, and supersedes all other prior or contemporaneous agreements between the parties,
+                        whether written or oral, on the same subject. No waiver or modification of this Service Agreement shall be valid unless in writing
+                        and executed by COVERALL and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order
+                        or other form subsequently submitted by CUSTOMER to COVERALL becomes a part of this Service Agreement, and
+                        COVERALL shall not be bound by any such terms and conditions
                     </li>
                 </ol>
             </div>
@@ -257,10 +263,10 @@
             <div class="col-lg-12">
                 <h4 class="heading fw-bold"> <?php echo $brandName ?> Safety anal Security Bocumerit </h4>
                 <p class="mt-2">
-                    The <?php echo $brandName ?>" Sysfem places gi'eat eIJ1pIJasis on safety and secui ity. <?php echo $brandName ?> FranclJlsed Business Owners are trained and eel tified on Personal Safety, Customer Account Security, Emergency Actions, AOciJenl lnvestgahon and Reposing, anJ oter aspects of Weaing your facility in a sefe and secure manner
+                   The Coverall System places great emphasis on safety and security. Coverall Franchised Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner. 
                 </p>
                 <p>
-                    To help us support your safety and security measures, please answer the questions below.
+                  To help us support your safety and security measures, please answer the questions below.
                 </p>
                 <p>
                    <span class="d-inline-block" style="width:16%">  Customer Name: </span> <span class="border-bottom border-black d-inline-block float-left" style="width: 78%;"> Office Eevolution </span>
@@ -275,7 +281,7 @@
                     <ol class="ps-3">
                         <li>
                             <p class="mb-1">
-                                Is protective eqrlipiiJent required in any parts of your facillfy where the <?php echo $brandName ?> FranclJised Buainess Owner or its employees will be providing services2 This might include hard hats, eye prolscliorl, steel-toed shoes, gloves, gowns, masI‹s, oi other personal pro[ective gear.
+                               Is protective equipment required in any parts of your facility where the Coverall Franchised Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday" checked>
@@ -286,12 +292,12 @@
                                 <label class="form-check-label" for="Tuesday">  No </label>
                             </div>
                             <p class="mt-3">
-                                If yes, please document lhe equipment that Is reqrlired and the areas in which it should be used.
+                               If yes, please document the equipment that is required and the areas in which it should be used.
                             </p>
                         </li>
                         <li class="mt-5">
                             <p class="mb-1">
-                                Will the <?php echo $brandName ?> Franchised Business Owner need to disarm and arm a bulldlng sec‹ifity system?
+                               Will the Coverall Franchised Business Owner need to disarm and arm a building security system?
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday" checked>
@@ -305,7 +311,7 @@
 
                         <li class="mt-5">
                             <p class="mb-1">
-                                Will the <?php echo $brandName ?> Franchised Business Owner be given a set of keys for your facility
+                                 Will the Coverall Franchised Business Owner be given a set of keys for your facility?
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday">
@@ -324,13 +330,13 @@
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday">
                                 <label class="form-check-label" for="monday">
-                                    I am a'uare of Asbeslos In the facility whe e ths <?php echo $brandName ?> Franchised Business will be providing services, and if appllcabla, I will pro yide the Asbestos 0ontroJ Plali to ]ha represantBtive of the Covel all Franchised Buslness.
+                                I am aware of Asbestos in the facility where the Coverall Franchisad Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the Coverall Franchised Business.
                                  </label>
                             </div>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="Tuesday" checked>
                                 <label class="form-check-label" for="Tuesday">
-                                    I an not aware of Asbestos in the facility where the <?php echo $brandName ?> Franchised Business will be provicling services.
+                                  I am not aware of Asbestos in the facility where the Coverall Franchised Business will be providing services.
                                 </label>
                             </div>
                         </li>
@@ -375,10 +381,10 @@
                 <p>Dear <?php echo $deanName ?>,</p>
                 <p>Thank you for the opportunity to present this proposal, which we have customized to your needs and requests.</p>
                 <p>
-                    The <?php echo $brandName ?> Health-Based Cleaning Systems Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the <?php echo($brandName) ?> Program your facility will look clean and smell clean —and actually be a cleaned, healthier place for everyone.
+                  The Coverall Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the Coverall® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.
                 </p>
                 <p>
-                    Your <?php echo $brandName ?> Service Plan and Service Agreement are attached. Please review them to learn exactly how the <?php echo($brandName) ?> Program will meet and exceed your expectations.
+                   Your Coverall Service Plan and Service Agreernent are attached. Please review them to learn exactly how the Coverall Program will meet and exceed your expectations.
                 </p>
                 <p>
                     Thank you again We look forward to working with you! 
@@ -401,7 +407,7 @@
                     Your top priorities for cleaning
                 </h3>
                 <p>
-                    In our conversations, you told me that the following are your biggest areas of concern regarding the cleaning of your facility:
+                  In our conversations, you told me that the following are your biggest areas of concern regarding the cleaning of your facility:
                 </p>
                 <div class="form-check ms-3">
                     <input class="form-check-input" type="checkbox" value="" id="office">
@@ -416,7 +422,7 @@
                     <label class="form-check-label" for="Kitchen">  Kitchen </label>
                 </div>
                 <p class="ms-5 my-4">
-                    <?php echo $brandName ?> Health-Based Cleaning System uses scientifically proven cleaning supplies, tools and techniques to ensure that these important priorities will be handled properly.
+                Coverall Health-Based Cleaning System uses scientifically proven cleaning supplies, tools and techniques to ensure that these important priorities will be handled properly.
                 </p>
             </div>
             <div class="col-lg-7">
@@ -431,7 +437,7 @@
                     <label class="form-check-label" for="office">  Get the best value for your cleaning budget </label>
                 </div>
                 <p>
-                    A lot has changed in the way that cleaning is done today. The work can be much faster than in the past. <?php echo $brandName ?> leads the industry in finding and using the best tools, techniques and training to give you a cleaning schedule that delivers more value within your budget.
+                  A lot has changed in the way that cleaning is done today. The work can be much faster than in the past. Coverall leads the industry in finding and using the best tools, techniques and training to give you a cleaning schedule that delivers more value within your budget.
                 </p>
 
                 <div class="form-check ms-3">
@@ -441,7 +447,7 @@
                     </label>
                 </div>
                 <p>
-                   <?php echo $brandName ?> Franchise Owners use multi-filtration vacuums to improve indoor air quality by removing 99.97% of dust, dirt, bacteria, mold, yeast, and particles down to 0.3 microns. In contrast, traditional commercial vacuums return 40% of the dirt they pick up directly into the air.
+                   Coverall Franchise Owners use multi-filtration vacuums to improve indoor air quality by removing 99.97% of dust, dirt, bacteria, mold, yeast, and particles down to 0.3 microns. In contrast, traditional commercial vacuums return 40% of the dirt they pick up directly into the air.
                 </p>
 
                 <div class="form-check ms-3">
@@ -451,7 +457,7 @@
                     </label>
                 </div>
                 <p>
-                    <?php echo $brandName ?> uses environmentally safe, hospital-grade disinfectant cleaning products, which are recommended by the Centers for Disease Control (CDC) and many medical studies to limit the spread of germs, especially in bathrooms.
+                    Coverall uses environmentally safe, hospital-grade disinfectant cleaning products, which are recommended by the Centers for Disease Control (CDC) and many medical studies to limit the spread of germs, especially in bathrooms.
                 </p>
 
                 <div class="form-check ms-3">
@@ -461,7 +467,7 @@
                     </label>
                 </div>
                 <p>
-                    Your <?php echo $brandName ?> Franchise Owner was trained and certified to use <?php echo $brandName ?> Health-Based Cleaning System so that you get consistent, high-quality results. The cleaning team will use a log book to communicate notes or questions lo you, and you will have direct access to them, to your local <?php echo $brandName ?> office, and to phone support 24 hours a day.
+                    Your Coverall Franchise Owner was trained and certified to use Coverall Health-Based Cleaning System so that you get consistent, high-quality results. The cleaning team will use a log book to communicate notes or questions to you, and you will have direct access to them, to your local Coverall office, and to phone support 24 hours a day.
                 </p>
 
                 <div class="form-check ms-3">
@@ -471,7 +477,7 @@
                     </label>
                 </div>
                 <p>
-                    The <?php echo $brandName ?> Color-Coding for Healthy Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross- contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.
+                   The Coverall Color-Coding for Health® Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross- contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.
                 </p>
             </div>
         </div> <hr>
@@ -721,7 +727,7 @@
                         </tr>
                         <tr>
                             <td> Detail Dust and Clean </td>
-                            <td> Thronoughly dust and clean accessible fixtures and office furniture including file cabinets, desks, credenzas, counter tops, display units, window sills. </td>
+                            <td>Thoroughly dust and clean accessible fixtures and office furniture including file cabinets, desks, credenzas, counter tops, display units, window sills. </td>
                             <td> 1 times per week </td>
                         </tr>
                         <tr>
@@ -731,22 +737,22 @@
                         </tr>
                         <tr>
                             <td>High and Low Dusting  </td>
-                            <td>Dust high and low vertical and horizontal surfaces and corners not cleaned in the course of normal dusting no! to exceed 12 feet. </td>
+                            <td> Dust high and low vertical and horizontal surfaces and corners not cleaned in the course of normal dusting not to exceed 12 feet. </td>
                             <td> 1 times per month </td>
                         </tr>
                         <tr>
                             <td> High Touch Points </td>
-                            <td> Clean and disinfect high”touch pointa such as light switches and door knobs. </td>
+                            <td> Clean and disinfect high touch points such as light switches and door knobs. </td>
                             <td> 3 times per week  </td>
                         </tr>
                         <tr>
                             <td> Spot Clean Internal Glass </td>
-                            <td> Spot clean internal partition glass to remove smudges and fingerprints</td>
+                            <td>Spot clean internal partition glass to remove smudges and fingerprints. </td>
                             <td> 2 times per week </td>
                         </tr>
                         <tr>
                             <td> Spot Dust and Clean </td>
-                            <td> Spot dust and clean visible soils on fixtures and office furniture” including file cabinets, desks, credenzas, counter tops, display units and window sills. </td>
+                            <td> Spot dust and clean visible soils on fixtures and office furniture including file cabinets, desks, credenzas, counter tops, display units and window sills. </td>
                             <td> 2 times per week </td>
                         </tr>
                         <tr>
@@ -756,7 +762,7 @@
                         </tr>
                         <tr>
                             <td> Vacum Furnishings or Wet Swip </td>
-                            <td> Vacuum fabric-covered ivrnishings and or wet wipe other furniture to remove visible dust or soil </td>
+                            <td> Vacum fabric-covered ivrnishings and or wet wipe other furniture to remove visible dust or soil </td>
                             <td> 1 times per month </td>
                         </tr>
                     </tbody>
@@ -780,7 +786,7 @@
                     <tbody>
                         <tr>
                             <td style="width:211px"> Damp Vlop Hard Surface </td>
-                            <td> Damp mop hard surface floors using a no-dip protocol and changing Floors	 pad often to ensure removal of dirt. </td>
+                            <td> Damp mop hard surface floors using a no-dip protocol and changing. pad often to ensure removal of dirt. </td>
                             <td style="width:155px">  1 times per week </td>
                         </tr>
                         <tr>
@@ -790,12 +796,12 @@
                         </tr>
                         <tr>
                             <td> Spot Vacuum High Traffic Areas </td>
-                            <td> Spot vacuum high-traffic areas on days when wall-to-wall vacuuming is not needad </td>
+                            <td> Spot vacuum high-traffic areas on days when wall-to-wall vacuuming is not needed. </td>
                             <td> 2 times per month </td>
                         </tr>
                         <tr>
                             <td>Wall-to-Wall Vacuum </td>
-                            <td>  Detail vacuum accessible carpeted areas with a”pproved HEPA  backpack units.</td>
+                            <td> Detail vacum accessible carpeted areas with approved HEPA backpack units.</td>
                             <td> 1 times per month </td>
                         </tr>
                     </tbody>
@@ -822,10 +828,10 @@
                             <td> 
                               <ul>
                                 <li>Restroom Fixtures: Clean and polish dispensers and fixtures. Clean and disinfect wash basins, toilet bowls, urinals and counter tops. </li>
-                                <li>Restroom Walls: Clean accessible walls and toilet partitions fo remove visible soil.  </li>
-                                <li>Restroom Floors: Mop all floors using coded microfiber flat mopping system and disinfecting finished floor cleaner.</li>
+                                <li>Restroom Walls: Clean accessible walls and toilet partitions to remove visible soil.  </li>
+                                <li>Restroom Floors: : Mop all floors using coded microfiber flat mopping system and disinfecting finished floor cleaner. </li>
                                 <li>Restroom Mirrors: Polish all chrome and mirrors. </li>
-                                <li>Restroom Supplies: Restock expendable products such as paper towels, toilet tissue, hand soap, liners and deodorant products from customer inventory. </li>
+                                <li>Restroom Supplies: : Restock expendable products such as paper towels, toilet tissue, hand soap, liners and deodorant products from customer inventory.</li>
                                 <li>Restroom Trash Removal: Empty trash cans, replace liners, spot clean receptacles as needed and take trash to designated area. </li>
                               </ul>
                             </td>
@@ -858,7 +864,7 @@
                             <td style="width:211px; padding-top: 66px;"> Empty Cans and Remove Trash  </td>
                             <td> 
                               <p>
-                              Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the Coverall Franchised Business Owner or Coverall. <?php echo $brandName ?> Franchised Business Owner or <?php echo $brandName ?>.
+                              Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the Coverall Franchised Business Owner or Coverall.
                               </p>
                             </td>
                             <td style="width:155px; padding-top: 66px;"> 3 times per week </td>
@@ -904,8 +910,8 @@
                             <td> 3 times per week </td>
                         </tr>
                         <tr>
-                            <td> Spot Cjean Counters, Tables and Sinks </td>
-                            <td> Spot clean kitchen counters, tables and sinks to remove visible soil. </td>
+                            <td> Spot Clean Counters, Tables and Sinks</td>
+                            <td>Spot clean kitchen counters, tables and sinks to remove visible soil. </td>
                             <td> 3 times per week </td>
                         </tr>
                     </tbody>
