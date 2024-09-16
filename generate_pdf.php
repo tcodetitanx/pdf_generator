@@ -196,7 +196,7 @@ $pdf->SetFont('helvetica', '', 12);
                         <P>
                         (b) Termination/Notice: If a party to this Service Agreement fails to perform its obligations (the "non-performing party"), the party claiming non-performance shall send the non-performing party written notice, specifying the manner of non-performance. This notice will provide that the non-performing parley shall have lifteen (15) days from receipt of the notice to cure or correct the items of non-performance (the "Cure Period"). If these items are not corrected or cured within the Cure Period, the claiming party may issue a thirty (30) day written notice, of termination and/or pursue other available remedies for default.
                            <br>
-                           If the CUSTOMER's notice under this 117(b) concerns service Issues, the CUSTOMER shall permit the COVERALL franchisee or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a <?php echo $brandName ?> representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle COVERALL to collect the full amount due through the Term of this Service Agreement.
+                           If the CUSTOMER's notice under this 117(b) concerns service Issues, the CUSTOMER shall permit the <?php  echo $brandName ?> or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a <?php echo $brandName ?> representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle <?php  echo $brandName ?> to collect the full amount due through the Term of this Service Agreement.
                         </P>
                         <p>
                         (c) Notwithstanding the above, <?php echo($brandName) ?> may, but shall not be obligated to, terminate this Service Agreement immediately for non-payment by CUSTOMER of Service Charges due.
@@ -212,21 +212,21 @@ $pdf->SetFont('helvetica', '', 12);
                        <?php echo $brandName ?> will bill CUSTOMER monthly, and CUSTOMER agrees to pay <?php echo $brandName ?> the amount that is due and owing under the terms of this Service Agreement within 10 days of billing date. Late payments will incur service and finance charges. In the event of default on payment, CUSTOMER agrees to pay <?php echo $brandName ?>'s attorney's fees and costs for collection.
                     </li>
                     <li class="my-3">
-                       Services shall be performed as stated in the Coverall Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.
+                       Services shall be performed as stated in the <?php  echo $brandName ?> Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.
                     </li>
                     <li class="my-3">
-                      If "Additional Special Services" are included in the Coverall Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included In CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.
+                      If "Additional Special Services" are included in the <?php  echo $brandName ?> Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included In CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.
                     </li>
                     <li class="my-3">
-                      The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a COVERALL franchisee, a subcontractor or another third party.
+                      The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a <?php  echo $brandName ?>, a subcontractor or another third party.
                     </li>
                     <li class="my-3">
                        This Service Agreement and attached exhibits constitute the complete agreement of the parties concerning the provision of
                         cleaning services to the CUSTOMER, and supersedes all other prior or contemporaneous agreements between the parties,
                         whether written or oral, on the same subject. No waiver or modification of this Service Agreement shall be valid unless in writing
-                        and executed by COVERALL and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order
-                        or other form subsequently submitted by CUSTOMER to COVERALL becomes a part of this Service Agreement, and
-                        COVERALL shall not be bound by any such terms and conditions
+                        and executed by <?php  echo $brandName ?> and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order
+                        or other form subsequently submitted by CUSTOMER to <?php  echo $brandName ?> becomes a part of this Service Agreement, and
+                        <?php  echo $brandName ?> shall not be bound by any such terms and conditions
                     </li>
                 </ol>
             </div>
@@ -263,7 +263,7 @@ $pdf->SetFont('helvetica', '', 12);
             <div class="col-lg-12">
                 <h4 class="heading fw-bold"> <?php echo $brandName ?> Safety anal Security Bocumerit </h4>
                 <p class="mt-2">
-                   The Coverall System places great emphasis on safety and security. Coverall Franchised Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner. 
+                   The <?php  echo $brandName ?> System places great emphasis on safety and security. <?php  echo $brandName ?> Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner. 
                 </p>
                 <p>
                   To help us support your safety and security measures, please answer the questions below.
@@ -281,7 +281,7 @@ $pdf->SetFont('helvetica', '', 12);
                     <ol class="ps-3">
                         <li>
                             <p class="mb-1">
-                               Is protective equipment required in any parts of your facility where the Coverall Franchised Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
+                               Is protective equipment required in any parts of your facility where the <?php  echo $brandName ?> Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday" checked>
@@ -297,7 +297,7 @@ $pdf->SetFont('helvetica', '', 12);
                         </li>
                         <li class="mt-5">
                             <p class="mb-1">
-                               Will the Coverall Franchised Business Owner need to disarm and arm a building security system?
+                               Will the <?php  echo $brandName ?> Business Owner need to disarm and arm a building security system?
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday" checked>
@@ -311,7 +311,7 @@ $pdf->SetFont('helvetica', '', 12);
 
                         <li class="mt-5">
                             <p class="mb-1">
-                                 Will the Coverall Franchised Business Owner be given a set of keys for your facility?
+                                 Will the <?php  echo $brandName ?> Business Owner be given a set of keys for your facility?
                             </p>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday">
@@ -330,13 +330,13 @@ $pdf->SetFont('helvetica', '', 12);
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="monday">
                                 <label class="form-check-label" for="monday">
-                                I am aware of Asbestos in the facility where the Coverall Franchisad Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the Coverall Franchised Business.
+                                I am aware of Asbestos in the facility where the <?php  echo $brandName ?> Franchisad Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the <?php  echo $brandName ?> Business.
                                  </label>
                             </div>
                             <div class="form-check ms-3">
                                 <input class="form-check-input" type="checkbox" value="" id="Tuesday" checked>
                                 <label class="form-check-label" for="Tuesday">
-                                  I am not aware of Asbestos in the facility where the Coverall Franchised Business will be providing services.
+                                  I am not aware of Asbestos in the facility where the <?php  echo $brandName ?> Business will be providing services.
                                 </label>
                             </div>
                         </li>
@@ -381,10 +381,10 @@ $pdf->SetFont('helvetica', '', 12);
                 <p>Dear <?php echo $deanName ?>,</p>
                 <p>Thank you for the opportunity to present this proposal, which we have customized to your needs and requests.</p>
                 <p>
-                  The Coverall Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the Coverall® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.
+                  The <?php  echo $brandName ?> Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the <?php  echo $brandName ?>® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.
                 </p>
                 <p>
-                   Your Coverall Service Plan and Service Agreernent are attached. Please review them to learn exactly how the Coverall Program will meet and exceed your expectations.
+                   Your <?php  echo $brandName ?> Service Plan and Service Agreernent are attached. Please review them to learn exactly how the <?php  echo $brandName ?> Program will meet and exceed your expectations.
                 </p>
                 <p>
                     Thank you again We look forward to working with you! 
@@ -422,7 +422,7 @@ $pdf->SetFont('helvetica', '', 12);
                     <label class="form-check-label" for="Kitchen">  Kitchen </label>
                 </div>
                 <p class="ms-5 my-4">
-                Coverall Health-Based Cleaning System uses scientifically proven cleaning supplies, tools and techniques to ensure that these important priorities will be handled properly.
+                <?php  echo $brandName ?> Health-Based Cleaning System uses scientifically proven cleaning supplies, tools and techniques to ensure that these important priorities will be handled properly.
                 </p>
             </div>
             <div class="col-lg-7">
@@ -437,7 +437,7 @@ $pdf->SetFont('helvetica', '', 12);
                     <label class="form-check-label" for="office">  Get the best value for your cleaning budget </label>
                 </div>
                 <p>
-                  A lot has changed in the way that cleaning is done today. The work can be much faster than in the past. Coverall leads the industry in finding and using the best tools, techniques and training to give you a cleaning schedule that delivers more value within your budget.
+                  A lot has changed in the way that cleaning is done today. The work can be much faster than in the past. <?php  echo $brandName ?> leads the industry in finding and using the best tools, techniques and training to give you a cleaning schedule that delivers more value within your budget.
                 </p>
 
                 <div class="form-check ms-3">
@@ -447,7 +447,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </label>
                 </div>
                 <p>
-                   Coverall Franchise Owners use multi-filtration vacuums to improve indoor air quality by removing 99.97% of dust, dirt, bacteria, mold, yeast, and particles down to 0.3 microns. In contrast, traditional commercial vacuums return 40% of the dirt they pick up directly into the air.
+                   <?php  echo $brandName ?> Owners use multi-filtration vacuums to improve indoor air quality by removing 99.97% of dust, dirt, bacteria, mold, yeast, and particles down to 0.3 microns. In contrast, traditional commercial vacuums return 40% of the dirt they pick up directly into the air.
                 </p>
 
                 <div class="form-check ms-3">
@@ -457,7 +457,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </label>
                 </div>
                 <p>
-                    Coverall uses environmentally safe, hospital-grade disinfectant cleaning products, which are recommended by the Centers for Disease Control (CDC) and many medical studies to limit the spread of germs, especially in bathrooms.
+                    <?php  echo $brandName ?> uses environmentally safe, hospital-grade disinfectant cleaning products, which are recommended by the Centers for Disease Control (CDC) and many medical studies to limit the spread of germs, especially in bathrooms.
                 </p>
 
                 <div class="form-check ms-3">
@@ -467,7 +467,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </label>
                 </div>
                 <p>
-                    Your Coverall Franchise Owner was trained and certified to use Coverall Health-Based Cleaning System so that you get consistent, high-quality results. The cleaning team will use a log book to communicate notes or questions to you, and you will have direct access to them, to your local Coverall office, and to phone support 24 hours a day.
+                    Your <?php  echo $brandName ?> Owner was trained and certified to use <?php  echo $brandName ?> Health-Based Cleaning System so that you get consistent, high-quality results. The cleaning team will use a log book to communicate notes or questions to you, and you will have direct access to them, to your local <?php  echo $brandName ?> office, and to phone support 24 hours a day.
                 </p>
 
                 <div class="form-check ms-3">
@@ -477,7 +477,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </label>
                 </div>
                 <p>
-                   The Coverall Color-Coding for Health® Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross- contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.
+                   The <?php  echo $brandName ?> Color-Coding for Health® Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross- contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.
                 </p>
             </div>
         </div> <hr>
@@ -864,7 +864,7 @@ $pdf->SetFont('helvetica', '', 12);
                             <td style="width:211px; padding-top: 66px;"> Empty Cans and Remove Trash  </td>
                             <td> 
                               <p>
-                              Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the Coverall Franchised Business Owner or Coverall.
+                              Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the <?php  echo $brandName ?> Business Owner or <?php  echo $brandName ?>.
                               </p>
                             </td>
                             <td style="width:155px; padding-top: 66px;"> 3 times per week </td>
