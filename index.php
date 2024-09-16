@@ -707,7 +707,7 @@ $pdf->SetFont('helvetica', '', 12);
                 <h3> <?php echo $brandName ?> services, and how often they will be done at your facility.</h3>
             </div>
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 20%;" src="assets/images/Picture5.png" alt="">
+                <img class="img-responsive" style="width: 20%;" src="assets/images/dusting.png" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> DUSTING AND DESINFICATION </h3>
