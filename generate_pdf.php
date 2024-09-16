@@ -698,7 +698,7 @@ $content = <<<EOD
                 <h3>   $brandName  services, and how often they will be done at your facility.</h3>
             </div>
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 20%;" src="assets/images/Picture5.png" alt="">
+                <img class="img-responsive" src="assets/images/dusting.png" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> DUSTING AND DESINFICATION </h3>
@@ -762,7 +762,7 @@ $content = <<<EOD
 
          
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 20%;" src="assets/images/vacum.png" alt="">
+                <img class="img-responsive" src="assets/images/vacum.png" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3>  CARPET AND FLOOR CARE </h3>
@@ -801,7 +801,7 @@ $content = <<<EOD
         </div> <br> <hr>
         <div class="row my-4">
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 18%;" src="assets/images/restroom.png" alt="">
+                <img class="img-responsive" src="assets/images/restroom.png" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> RESTROOM SERVICES </h3>
@@ -833,7 +833,7 @@ $content = <<<EOD
             </div>
 
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 18%;" src="assets/images/trash.png" alt="">
+                <img class="img-responsive" src="assets/images/trash.png" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> TRASH AND MISCELLANEOUS </h3>
@@ -872,7 +872,7 @@ $content = <<<EOD
 
         <div class="row my-4">
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 18%;" src="assets/images/kitchen.png" alt="">
+                <img class="img-responsive" src="assets/images/kitchen.png" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> KITCHEN AREAS </h3>
