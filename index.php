@@ -981,6 +981,29 @@ $pdf->SetFont('helvetica', '', 12);
             </div>
         </div>
     </div>
+    <script>
+        const signatureInput = document.getElementById('signature');
+        const signatureDateInput = document.getElementById('signatureDate');
+        const generatePdfBtn = document.getElementById('generatePdfBtn');
+
+        function checkFields() {
+            if (signatureInput.value.trim() !== '' && signatureDateInput.value !== '') {
+                generatePdfBtn.disabled = false;
+            } else {
+                generatePdfBtn.disabled = true;
+            }
+        }
+
+        signatureInput.addEventListener('input', checkFields);
+        signatureDateInput.addEventListener('input', checkFields);
+
+        function generatePDF() {
+            const signature = encodeURIComponent(signatureInput.value);
+            const signatureDate = encodeURIComponent(signatureDateInput.value);
+            const url = `generate_pdf.php?<?php echo $_SERVER['QUERY_STRING']; ?>&signature=${signature}&signatureDate=${signatureDate}`;
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
 
