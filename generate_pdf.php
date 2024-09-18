@@ -188,124 +188,74 @@ $content = <<<EOD
 
         <p> Please email or fax signed contract to: </p>
      
-        <div class="row">
-            <div class="col-lg-12 p-4 text-end">
-                <img src="assets/images/logo.jpg" alt="logo">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h4 class="heading fw-bold">   $brandName  Safety anal Security Bocumerit </h4>
-                <p class="mt-2">
-                   The   $brandName  System places great emphasis on safety and security.   $brandName  Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner. 
-                </p>
-                <p>
-                  To help us support your safety and security measures, please answer the questions below.
-                </p>
-                <p>
-                   <span class="d-inline-block" style="width:16%">  Customer Name: </span> <span class="border-bottom border-black d-inline-block float-left" style="width: 78%;"> Office Eevolution </span>
-                </p>
-                <p>
-                    <span class="d-inline-block" style="width:16%">  Customer Address: </span> <span class="border-bottom border-black d-inline-block float-left" style="width: 78%;"> 504 W. 800 N. Orem, UT 84057 </span>
-                </p>
-            </div>
-        </div>
-            <div class="row mt-4">
-                <div class="col-lg-12">
-                    <ol class="ps-3">
-                        <li>
-                            <p class="mb-1">
-                               Is protective equipment required in any parts of your facility where the   $brandName  Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
-                            </p>
-                            <div class="form-check ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="monday" checked>
-                                <label class="form-check-label" for="monday">  Yes </label>
-                            </div>
-                            <div class="form-check ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="Tuesday">
-                                <label class="form-check-label" for="Tuesday">  No </label>
-                            </div>
-                            <p class="mt-3">
-                               If yes, please document the equipment that is required and the areas in which it should be used.
-                            </p>
-                        </li>
-                        <li class="mt-5">
-                            <p class="mb-1">
-                               Will the   $brandName  Business Owner need to disarm and arm a building security system?
-                            </p>
-                            <div class="form-check ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="monday" checked>
-                                <label class="form-check-label" for="monday">  Yes </label>
-                            </div>
-                            <div class="form-check ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="Tuesday">
-                                <label class="form-check-label" for="Tuesday">  No </label>
-                            </div>
-                        </li>
-
-                        <li class="mt-5">
-                            <p class="mb-1">
-                                 Will the   $brandName  Business Owner be given a set of keys for your facility?
-                            </p>
-                            <div class="form-check ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="monday">
-                                <label class="form-check-label" for="monday">  Yes </label>
-                            </div>
-                            <div class="form-check ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="Tuesday" checked>
-                                <label class="form-check-label" for="Tuesday">  No </label>
-                            </div>
-                        </li>
-
-                        <li class="mt-5">
-                            <p class="mb-1">
-                                Asbestos
-                            </p>
-                            <div class="form-check ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="monday">
-                                <label class="form-check-label" for="monday">
-                                I am aware of Asbestos in the facility where the   $brandName  Franchisad Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the   $brandName  Business.
-                                 </label>
-                            </div>
-                            <div class="form-check ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="Tuesday" checked>
-                                <label class="form-check-label" for="Tuesday">
-                                  I am not aware of Asbestos in the facility where the   $brandName  Business will be providing services.
-                                </label>
-                            </div>
-                        </li>
-                        <li class="mt-5">
-                            <p>
-                                <span class="d-inline-block"> Other </span> <span class="border-bottom border-black d-inline-block float-left" style="width: 90%;"> </span>
-                                <span class="border-bottom border-black d-block float-left my-4 py-1"> </span>
-                                <span class="border-bottom border-black d-block float-left my-4 py-1"> </span>
-                            </p>
-                        </li>
-                    </ol>
-                </div>
-            </div> 
+     
             
+        <img src="assets/images/logo.jpg" alt="logo">
+        <br> <br>
+        <h4 class="heading fw-bold">  $brandName  Safety anal Security Bocumerit </h4>
+        <p style="font-size:14px">The $brandName  System places great emphasis on safety and security.   $brandName  Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner. </p>
+        <p style="font-size:14px">To help us support your safety and security measures, please answer the questions below.</p>
+        <span>Customer Name: Office Eevolution </span> <span> <hr> </span> <br>
+        <span>Customer Address:  504 W. 800 N. Orem, UT 84057 </span> </span> <span> <hr> </span>
+        <ol style="font-size:14px">
+            <li>Is protective equipment required in any parts of your facility where the   $brandName  Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
+                <div>
+                    <input type="checkbox" id="yes1" name="yes1" value="yes1">
+                    <label for="yes1">  Yes </label> <br>
+                    <input type="checkbox" id="no1" name="no1" value="no1">
+                    <label for="no1">  No </label>
+                    <p>If yes, please document the equipment that is required and the areas in which it should be used.</p>
+                </div>
+            </li>
+            <li>Will the   $brandName  Business Owner need to disarm and arm a building security system?
+                <div>
+                    <input type="checkbox" id="yes2" name="yes2" value="yes2">
+                    <label for="yes2">  Yes </label> <br>
+                    <input type="checkbox" id="no2" name="no2" value="no2">
+                    <label for="no2">  No </label>
+                </div>
+            </li>
+
+            <li>Will the   $brandName  Business Owner be given a set of keys for your facility?
+                <div>
+                    <input type="checkbox" id="yes3" name="yes3" value="yes3">
+                    <label for="yes3">  Yes </label> <br>
+                    <input type="checkbox" id="no3" name="no3" value="no3">
+                    <label for="no3">  No </label>
+                </div>
+            </li>
+
+            <li> Asbestos
+                 <div>
+                    <input type="checkbox" id="yes4" name="yes4" value="yes4">
+                    <label for="yes4">I am aware of Asbestos in the facility where the   $brandName  Franchisad Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the   $brandName  Business. </label> <br>
+                    <input type="checkbox" id="no4" name="no4" value="no4">
+                    <label for="no4">I am not aware of Asbestos in the facility where the $brandName  Business will be providing services.</label>
+                </div>
+            </li>
+            <li> Other: 
+                <span> <hr> <br> </span>
+                <span> <hr> <br> </span>
+                <span> <hr> <br> </span>
+            </li>
+        </ol>
           
-            <div class="row mt-5">
-                <div class="col-lg-12 p-4 text-end">
-                    <img src="assets/images/logo.jpg" alt="logo">
-                </div>
-                <div class="col-lg-12 text-center mt-5">
-                    <h4 class="heading fw-bold"> Customized Service Plan and Proposal </h4>
-                    <p class="mb-0" style="font-size: 56px; font-weight: bold; margin-top: 44px;"> Office </p>
-                    <p class="mt-0" style="font-size: 56px; font-weight: bold;"> Eevolution </p>
-                    
-                </div>
-                <div class="col-lg-12 text-center mt-5">
-                    <p class="heading fw-bold">By:</p>
-                    <p class="mb-0">   $escName  <br> Executive Sales Consultant <br>
-                          $brandName  North America
-                    </p>
-                    <p class="mt-5 mb-0"> Date: </p>
-                    <p>   $proposalDate  </p>
-                </div>
-            </div>
-       <hr>
+        
+        <img src="assets/images/logo.jpg" alt="logo">
+          <p> </p> <p> </p> <p>
+            <h4 align="center"> Customized Service Plan and Proposal </h4>
+            <p align="center" style="font-size:36px; font-weight:bold"> Office </p>
+            <p align="center" style="font-size:34px;"> Eevolution </p>
+            <p> </p> <p> </p> <p> <p> </p> <p>
+            <p align="center">By:</p>
+            <p align="center">$escName <br> Executive Sales Consultant <br>
+                    $brandName  North America
+            </p>
+            <p align="center"> Date: </p>
+            <p align="center"> $proposalDate </p>
+      
+
+
         <div class="row my-4">
             <div class="col-lg-7 text-end"></div>
             <div class="col-lg-5 text-end">
