@@ -1,11 +1,12 @@
-
 <?php
+
 require_once('tcpdf/tcpdf.php');
 
 // Create new PDF document
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // Set document information
+
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Your Company Name');
 $pdf->SetTitle('Promissory Note and Eviction Notice');
@@ -44,210 +45,152 @@ $pdf->SetFont('helvetica', '', 12);
  $citySateZip=$_GET['citySateZip']??"";
  $monthlyCharges=$_GET['monthlyCharges']??0;
  // Create the content
+
 $content = <<<EOD
-    <div class="container border rounded">
-        <div class="row">
-            <div class="col-lg-12 p-4">
-                <img src="assets/images/logo.png" alt="logo">
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-lg-12">
-                <h4 class="heading fw-bold"> $brandName  </h4>
-                <p class="mt-2">
-                    The Undersigned (  $customerName  ) hereby accepts the proposal of Melton Franchise System, Inc,  $brandName  ,
-                    and the parties agree that  $brandName  'S franchises and/or subcontractors will supply  ($brandName   System Services for
-                    CUSTOMER'S permises located at:
-                </p>
-                <ul class="ps-3">
-                    <li>Customer: <span id="customer">   $customerName   </span></li>
-                    <li>Street Address: <span id="customer">   $address   </span></li>
-                    <li>City State Zip: <span id="customer">  $citySateZip   </span></li>
-                </ul>
+        
+        <img src="assets/images/logo.jpg" alt="logo">
+        <h3 style="margin-top:22px;" class="heading fw-bold"> $brandName  </h3>
+        <p style="font-size:14px">The Undersigned (  $customerName  ) hereby accepts the proposal of Melton Franchise System, Inc,  $brandName  ,and the parties agree that  $brandName  'S franchises and/or subcontractors will supply  ($brandName  System Services for CUSTOMER'S permises located at:</p>
+        <ul>
+            <li>Customer:   $customerName  </li>
+            <li>Street Address:   $address  </li>
+            <li>City State Zip:  $citySateZip  </li>
+        </ul>
 
-                <p class="">Upon the following term</p>
+        <p>Upon the following term</p>
+            <ol style="font-size:14px">
+                <li> Monthly Services Charge: 
+                    <div>$monthlyCharges  $ per month, plus taxes, if applicable; to include 3 times(s) per week services. Initial</div>
+                    <div>Service Days <br> 
+                        <input type="checkbox" id="monday" name="monday" value="monday">
+                        <label style="font-size:11px" for="monday"> Monday </label>
 
-                <ol class="ps-3">
-                    <li>Monthly Services Charge: 
-                        <p class="ms-4">   $monthlyCharges  $ per month, plus taxes, if applicable; to include 3 times(s) per week services. Initial</p>
-                        <div class="mb-3">
-                            <label for="monthlyCharge" class="form-label d-block">  Service Days </label>
-                            <div class="form-check d-inline-block ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="monday">
-                                <label class="form-check-label" for="monday">  Monday </label>
-                            </div>
-                            <div class="form-check d-inline-block ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="Tuesday" checked>
-                                <label class="form-check-label" for="Tuesday">  Tuesday </label>
-                            </div>
-                            <div class="form-check d-inline-block ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="wednesday">
-                                <label class="form-check-label" for="wednesday">  Wednesday </label>
-                            </div>
-                            <div class="form-check d-inline-block ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="thursday" checked>
-                                <label class="form-check-label" for="thursday">  Thursday </label>
-                            </div>
-                            <div class="form-check d-inline-block ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="friday">
-                                <label class="form-check-label" for="friday">  Friday </label>
-                            </div>
-                            <div class="form-check d-inline-block ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="saturday" checked>
-                                <label class="form-check-label" for="saturday">  Satarday </label>
-                            </div>
-                            <div class="form-check d-inline-block ms-3">
-                                <input class="form-check-input" type="checkbox" value="" id="sunday">
-                                <label class="form-check-label" for="sunday">  Sunday </label>
-                            </div>
-                        </div>
-                        <p>
-                            Axiom Corp System Services are to be performed in the evening, unless otherwise agreed to by the parties.
-                        </p>
-                    </li>
-                    <li class="my-3">
-                        CUSTOMER acknowledges that  ($brandName   will delegate all  ($brandName   System Services to be performert hereunder to a   $brandName  franchisee and/or subcontractor and  ($brandName   way assign this Service Agreement In Its entirely to a  ($brandName   franchisee and/or subcontractor.
-                    </li>
+                        <input type="checkbox" id="tuesday" name="tuesday" value="tuesday">
+                        <label style="font-size:11px" for="tuesday"> Tuesday </label>
 
-                    <li class="my-3">
-                        Included the Service Charge will be service, cleaning supplies, 
-                        and any equipment which will be furnished by the  ($brandName   franchisee.
-                        The Service Charge does not include liners, paper supplles, and toiletries, which can be provided al CUSTOMER‘s expense, at competitive prices. The Service Charge also does not include any use tax, lax on sales, services or supplies, or oilier such tax, whlch taxes shall be paid by CUSTOMER. CUSTOMER agrees to reimburse  ($brandName   the amount of any such laxe i[ pai‹l by  ($brandName   on CUSTOMER's behalf.
-                    </li>
+                        <input type="checkbox" id="wednesday" name="wednesday" value="wednesday">
+                        <label style="font-size:11px" for="wednesday"> Wednesday </label>
 
-                    <li class="my-3">
-                        All   $brandName  Syslem Services specified in Ihe " ($brandName   Service Plan’ attached Io this Service Agreement as Exhibit A will be provided to CUSTOMER in a satlsfactory manner. CUSTOMER acI‹nowledges thai only those Services and/or Addilional Services specifically identified in the  ($brandName   Servlce Plan will be provided under Ihis Service Agreement.
-                    </li>
-                    <li class="my-3">
-                        All   $brandName  franchises have successfully completed  ($brandName  ‘s comprehensive training program and are required lo carry Insurance and a janitorlal bond.
-                    </li>
-                    <li class="my-3">
-                        Additional services, ‹Jot included in  ($brandName  's Service Oharge, to be perfanred upon request, priced par occurrence, at CUSTON1EFI'S expense, Include.
-                    </li>
-               
-                    <table class="table table-bordered rounded mt-4">
-                        <thead>
-                            <tr>
-                                <th scope="col">Additoinal Services </th>
-                                <th scope="col">Charge </th>
-                                <th scope="col">Area </th>
-                                <th scope="col">Square Footage </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> a. </td>
-                                <td>$  </td>
-                                <td> </td>
-                                <td> </td>
-                            </tr>
-                            <tr>
-                                <td> b. </td>
-                                <td> $ </td>
-                                <td> </td>
-                                <td> </td>
-                            </tr>
-                            <tr>
-                                <td> c. </td>
-                                <td>$  </td>
-                                <td> </td>
-                                <td> </td>
-                            </tr>
-                            <tr>
-                                <td> d. </td>
-                                <td>$  </td>
-                                <td> </td>
-                                <td> </td>
-                            </tr>
-                            <tr>
-                                <td> e. </td>
-                                <td> $ </td>
-                                <td> </td>
-                                <td> </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="my-4">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <p for="servicesAcceptedBy" class="form-label"> Additional Services Accepted By: </p> 
-                            </div>
-                            <div class="col-lg-6">
-                                <hr class="py-0 mb-0">
-                                <p class="py-0 my-0 text-center">Signature </p>
-                            </div>
-                        </div>
+                        <input type="checkbox" id="thursday" name="thursday" value="thursday">
+                        <label style="font-size:11px" for="thursday"> Thursday </label>
+
+                        <input type="checkbox" id="friday" name="friday" value="friday">
+                        <label style="font-size:11px" for="friday"> Friday </label>
+
+                        <input type="checkbox" id="saturday" name="saturday" value="saturday">
+                        <label style="font-size:11px" for="saturday"> Saturday </label>
+
+                        <input type="checkbox" id="sunday" name="sunday" value="sunday">
+                        <label style="font-size:11px" for="sunday"> Sunday </label>
                     </div>
+                    <div>Axiom Corp System Services are to be performed in the evening, unless otherwise agreed to by the parties.</div>
+               </li> 
+               <li>CUSTOMER acknowledges that  ($brandName   will delegate all  ($brandName   System Services to be performert hereunder to a   $brandName  franchisee and/or subcontractor and  ($brandName   way assign this Service Agreement In Its entirely to a  ($brandName   franchisee and/or subcontractor. </li>
+               <br>
+               <li>Included the Service Charge will be service, cleaning supplies, and any equipment which will be furnished by the  ($brandName   franchisee.
+                 The Service Charge does not include liners, paper supplles, and toiletries, which can be provided al CUSTOMER‘s expense, at competitive prices. The Service Charge also does not include any use tax, lax on sales, services or supplies, or oilier such tax, whlch taxes shall be paid by CUSTOMER. CUSTOMER agrees to reimburse  ($brandName   the amount of any such taxes if paid by  ($brandName   on CUSTOMER's behalf.
+               </li>
+               <br>
+              <li>All $brandName Syslem Services specified in Ihe" ($brandName  Service Plan’ attached Io this Service Agreement as Exhibit A will be provided to CUSTOMER in a satlsfactory manner. CUSTOMER acI‹nowledges thai only those Services and/or Addilional Services specifically identified in the  ($brandName   Servlce Plan will be provided under Ihis Service Agreement.</li>
+               <br> <br>
+              <li>All $brandName franchises have successfully completed ($brandName  ‘s comprehensive training program and are required lo carry Insurance and a janitorlal bond.</li>
+              <br>
+             <li>Additional services, ‹Jot included in ($brandName  's Service Oharge, to be perfanred upon request, priced par occurrence, at CUSTON1EFI'S expense, Include.</li>
+             <br>
+             <br>
+               
+            <table border="1" cellspacing="0" cellpadding="4">
+                <thead>
+                    <tr style="border: 1px solid black;">
+                        <th>Additoinal Services </th>
+                        <th>Charge </th>
+                        <th>Area </th>
+                        <th>Square Footage </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>a. </td>
+                        <td>$  </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>b. </td>
+                        <td>$ </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>c. </td>
+                        <td>$  </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>d. </td>
+                        <td>$  </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>e. </td>
+                        <td>$ </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <li class="my-3">
-                        <P>
-                        (a) The term of this Service Agreement is for one (1) year. This one year period shall begin on the date services are scheduled to begin.
+                <p> Additional Services Accepted By: -------------------------- Signature------------------------------- </p> 
+                    
+                <li>(a) The term of this Service Agreement is for one (1) year. This one year period shall begin on the date services are scheduled to begin.
                         This Service Agreement shall automatically extend for additional one (1) year periods, unless at least thirty (30) days prior to each anniversary of the date services are scheduled to begin, either party gives the other written notice of its intent not to renew.
-                        </P>
-                        <P>
+                       <br> <br>
                         (b) Termination/Notice: If a party to this Service Agreement fails to perform its obligations (the "non-performing party"), the party claiming non-performance shall send the non-performing party written notice, specifying the manner of non-performance. This notice will provide that the non-performing parley shall have lifteen (15) days from receipt of the notice to cure or correct the items of non-performance (the "Cure Period"). If these items are not corrected or cured within the Cure Period, the claiming party may issue a thirty (30) day written notice, of termination and/or pursue other available remedies for default.
-                           <br>
-                           If the CUSTOMER's notice under this 117(b) concerns service Issues, the CUSTOMER shall permit the   $brandName  or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a   $brandName  representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle   $brandName  to collect the full amount due through the Term of this Service Agreement.
-                        </P>
-                        <p>
+                        <br> <br>
+                        If the CUSTOMER's notice under this 117(b) concerns service Issues, the CUSTOMER shall permit the   $brandName  or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a   $brandName  representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle   $brandName  to collect the full amount due through the Term of this Service Agreement.
+                        <br> <br>
                         (c) Notwithstanding the above,  ($brandName   may, but shall not be obligated to, terminate this Service Agreement immediately for non-payment by CUSTOMER of Service Charges due.
-                        </p>
-                    </li>
-                    <li class="my-3">
-                        The Service Charge will remain in effect for one year unless there are changes in the original specifications for the premises. In the event of such changes, CUSTOMER will advise   $brandName  accordingly, and an adjustment in the Service Charge, as agreed to by the parties, will be made.
-                    </li>
-                    <li class="my-3">
-                      CUSTOMER agrees that it will not employ or contract with any   $brandName   employee, franchisee, or any of the franchisee's employees during the term of this Service Agreement or for one hundred and eighty (180) days after termination of this Service Agreement, without   $brandName 's written consent.
-                    </li>
-                    <li class="my-3">
-                         $brandName  will bill CUSTOMER monthly, and CUSTOMER agrees to pay   $brandName  the amount that is due and owing under the terms of this Service Agreement within 10 days of billing date. Late payments will incur service and finance charges. In the event of default on payment, CUSTOMER agrees to pay   $brandName 's attorney's fees and costs for collection.
-                    </li>
-                    <li class="my-3">
-                       Services shall be performed as stated in the   $brandName  Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.
-                    </li>
-                    <li class="my-3">
-                      If "Additional Special Services" are included in the   $brandName  Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included In CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.
-                    </li>
-                    <li class="my-3">
-                      The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a   $brandName , a subcontractor or another third party.
-                    </li>
-                    <li class="my-3">
-                       This Service Agreement and attached exhibits constitute the complete agreement of the parties concerning the provision of
-                        cleaning services to the CUSTOMER, and supersedes all other prior or contemporaneous agreements between the parties,
-                        whether written or oral, on the same subject. No waiver or modification of this Service Agreement shall be valid unless in writing
-                        and executed by   $brandName  and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order
-                        or other form subsequently submitted by CUSTOMER to   $brandName  becomes a part of this Service Agreement, and
-                          $brandName  shall not be bound by any such terms and conditions
-                    </li>
-                </ol>
-            </div>
-        </div>
-        <div class="row px-4">
-            <div class="col-lg-6">
-                <p class="mt-3 fw-bold"> Customer </p>
-                <hr class="mb-0 mt-4">
-                <p class="mb-4">Signature and Date</p>
-                <hr class="mb-0 mt-4">
-                <p class="mb-4">Print Name and Title, it's Authorized Representative </p>
-                <hr class="mb-0 mt-4">
-                <p class="mb-4">Email Address </p>
-            </div>
-            <div class="col-lg-6">
-                <p class="mt-3 fw-bold"> Axiom Corp </p>
-                <hr class="mb-0 mt-4">
-                <p class="mb-4">Salses Consultant(Signature and Date)</p>
-                <hr class="mb-0 mt-4">
-                <p class="mb-4">Print Name and Title, it's Authorized Representative </p>
-                <hr class="mb-0 mt-4">
-                <p class="mb-4">Service Start Date</p>
-            </div>
-            <div class="col-lg-12">
-                <p> Please email or fax signed contract to: </p>
-            </div>
-        </div>
+                </li> <br>  <br>  <br> 
+ 
+                <li>The Service Charge will remain in effect for one year unless there are changes in the original specifications for the premises. In the event of such changes, CUSTOMER will advise   $brandName  accordingly, and an adjustment in the Service Charge, as agreed to by the parties, will be made.</li> <br> 
+                <li>CUSTOMER agrees that it will not employ or contract with any   $brandName   employee, franchisee, or any of the franchisee's employees during the term of this Service Agreement or for one hundred and eighty (180) days after termination of this Service Agreement, without   $brandName 's written consent.</li> <br> 
+                <li>$brandName  will bill CUSTOMER monthly, and CUSTOMER agrees to pay   $brandName  the amount that is due and owing under the terms of this Service Agreement within 10 days of billing date. Late payments will incur service and finance charges. In the event of default on payment, CUSTOMER agrees to pay   $brandName 's attorney's fees and costs for collection.</li> <br> 
+                <li>Services shall be performed as stated in the   $brandName  Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.</li> <br> 
+                <li>If "Additional Special Services" are included in the   $brandName  Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included In CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.</li> <br> 
+                <li>The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a   $brandName , a subcontractor or another third party.</li> <br> 
+                <li>This Service Agreement and attached exhibits constitute the complete agreement of the parties concerning the provision of cleaning services to the CUSTOMER, and supersedes all other prior or contemporaneous agreements between the parties, whether written or oral, on the same subject. No waiver or modification of this Service Agreement shall be valid unless in writing and executed by   $brandName  and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order or other form subsequently submitted by CUSTOMER to   $brandName  becomes a part of this Service Agreement, and $brandName  shall not be bound by any such terms and conditions </li> <br> 
+        </ol>
+        <table width="100%">
+            <tr>
+                <td width="45%">
+                    <h2>Customer</h2> <br>
+                    <hr>
+                    <span>Signature and Date</span>
+                    <br> <hr>
+                    <span style="font-size:12px">Print Name and Title, it's Authorized Representative</span>
+                    <br> <hr>
+                    <span> Email Address </span>
+                </td>
+                <td width="2%"> </td>
+                <td width="45%">
+                    <h2>Axiom Corp</h2> <br>
+                     <br> <hr>
+                    <span>Salses Consultant(Signature and Date)</span>
+                     <br> <hr>
+                    <span style="font-size:12px">Print Name and Title, it's Authorized Representative</span>
+                     <br> <hr>
+                    <span>Service Start Date</span>
+                </td>
+            </tr>
+        </table>
+
+        <p> Please email or fax signed contract to: </p>
+     
         <div class="row">
             <div class="col-lg-12 p-4 text-end">
-                <img src="assets/images/logo.png" alt="logo">
+                <img src="assets/images/logo.jpg" alt="logo">
             </div>
         </div>
         <div class="row">
@@ -345,7 +288,7 @@ $content = <<<EOD
           
             <div class="row mt-5">
                 <div class="col-lg-12 p-4 text-end">
-                    <img src="assets/images/logo.png" alt="logo">
+                    <img src="assets/images/logo.jpg" alt="logo">
                 </div>
                 <div class="col-lg-12 text-center mt-5">
                     <h4 class="heading fw-bold"> Customized Service Plan and Proposal </h4>
@@ -366,7 +309,7 @@ $content = <<<EOD
         <div class="row my-4">
             <div class="col-lg-7 text-end"></div>
             <div class="col-lg-5 text-end">
-                <img class="img-responsive pe-2" style="width: 100%; margin-top: 55px;" src="assets/images/stamp-logo.png" alt="">
+                <img class="img-responsive pe-2" style="width: 100%; margin-top: 55px;" src="assets/images/stamp-logo.jpg" alt="">
             </div>
             <div class="col-lg-12 px-4">
                 <p>Dear   $deanName ,</p>
@@ -388,7 +331,7 @@ $content = <<<EOD
             </div>
             <div class="col-lg-3"> </div>
             <div class="col-lg-9">
-                <img class="img-responsive" style="width: 100%; margin-top: -80px;" src="assets/images/tap.png" alt="clean">
+                <img class="img-responsive" style="width: 100%; margin-top: -80px;" src="assets/images/tap.jpg" alt="clean">
             </div>
         </div>
         <hr>
@@ -417,7 +360,7 @@ $content = <<<EOD
                 </p>
             </div>
             <div class="col-lg-7">
-                <img class="img-responsive" style="width: 100%" src="assets/images/remove germ.png" alt="clean">
+                <img class="img-responsive" style="width: 100%" src="assets/images/remove germ.jpg" alt="clean">
             </div>
             <div class="col-lg-12">
                 <h3 class="border-bottom border-black d-inline-block">
@@ -475,7 +418,7 @@ $content = <<<EOD
 
         <div class="row my-4">
                 <div class="col-lg-12 p-4 text-center">
-                    <img class="img-responsive" src="assets/images/logo.png" alt="logo">
+                    <img class="img-responsive" src="assets/images/logo.jpg" alt="logo">
                 </div>
 
                 <div class="col-lg-12 my-4">
@@ -698,7 +641,7 @@ $content = <<<EOD
                 <h3>   $brandName  services, and how often they will be done at your facility.</h3>
             </div>
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" src="assets/images/dusting.png" alt="">
+                <img class="img-responsive" src="assets/images/dusting.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> DUSTING AND DESINFICATION </h3>
@@ -762,7 +705,7 @@ $content = <<<EOD
 
          
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" src="assets/images/vacum.png" alt="">
+                <img class="img-responsive" src="assets/images/vacum.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3>  CARPET AND FLOOR CARE </h3>
@@ -801,7 +744,7 @@ $content = <<<EOD
         </div> <br> <hr>
         <div class="row my-4">
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" src="assets/images/restroom.png" alt="">
+                <img class="img-responsive" src="assets/images/restroom.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> RESTROOM SERVICES </h3>
@@ -833,7 +776,7 @@ $content = <<<EOD
             </div>
 
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" src="assets/images/trash.png" alt="">
+                <img class="img-responsive" src="assets/images/trash.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> TRASH AND MISCELLANEOUS </h3>
@@ -872,7 +815,7 @@ $content = <<<EOD
 
         <div class="row my-4">
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" src="assets/images/kitchen.png" alt="">
+                <img class="img-responsive" src="assets/images/kitchen.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> KITCHEN AREAS </h3>
@@ -910,13 +853,13 @@ $content = <<<EOD
             </div>
             <div class="col-lg-12 text-center mt-4"> 
                 <h3> Health - Based Cleaninq System </h3>
-                <img class="img-responsive" style="width: 96%;" src="assets/images/whyKillgerm.png" alt="">
+                <img class="img-responsive" style="width: 96%;" src="assets/images/whyKillgerm.jpg" alt="">
             </div>
         </div> <br> <hr>
 
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" style="width:20%;" src="assets/images/closingTask.png" alt="">
+                <img class="img-responsive" style="width:20%;" src="assets/images/closingTask.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> Closing Task: </h3>
@@ -954,7 +897,7 @@ $content = <<<EOD
             </div>
             <div class="col-lg-12 text-center mt-4"> 
                 <h3> Our National Accounts </h3>
-                <img class="img-responsive" style="width: 96%;" src="assets/images/companies.png" alt="">
+                <img class="img-responsive" style="width: 96%;" src="assets/images/companies.jpg" alt="">
             </div>
             <div class="col-lg-12 mt-4">
                 <div class="mb-3">

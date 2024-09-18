@@ -1,7 +1,7 @@
 
 <?php
 
-require_once('./tcpdf/tcpdf.php');
+require_once('tcpdf/tcpdf.php');
 // Create new PDF document
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
@@ -43,23 +43,15 @@ $pdf->SetFont('helvetica', '', 12);
  $address=$_GET['address']??"";
  $citySateZip=$_GET['citySateZip']??"";
  $monthlyCharges=$_GET['monthlyCharges']??0;
+
+ require_once('header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</head>
-<body>
+
     <div class="container border rounded">
         <div class="row">
             <div class="col-lg-12 p-4">
-                <img src="assets/images/logo.png" alt="logo">
+                <img src="assets/images/logo.jpg" alt="logo">
             </div>
         </div>
         <div class="row mt-4">
@@ -258,7 +250,7 @@ $pdf->SetFont('helvetica', '', 12);
         </div>
         <div class="row">
             <div class="col-lg-12 p-4 text-end">
-                <img src="assets/images/logo.png" alt="logo">
+                <img src="assets/images/logo.jpg" alt="logo">
             </div>
         </div>
         <div class="row">
@@ -356,7 +348,7 @@ $pdf->SetFont('helvetica', '', 12);
           
             <div class="row mt-5">
                 <div class="col-lg-12 p-4 text-end">
-                    <img src="assets/images/logo.png" alt="logo">
+                    <img src="assets/images/logo.jpg" alt="logo">
                 </div>
                 <div class="col-lg-12 text-center mt-5">
                     <h4 class="heading fw-bold"> Customized Service Plan and Proposal </h4>
@@ -377,7 +369,7 @@ $pdf->SetFont('helvetica', '', 12);
         <div class="row my-4">
             <div class="col-lg-7 text-end"></div>
             <div class="col-lg-5 text-end">
-                <img class="img-responsive pe-2" style="width: 100%; margin-top: 55px;" src="assets/images/stamp-logo.png" alt="">
+                <img class="img-responsive pe-2" style="width: 100%; margin-top: 55px;" src="assets/images/stamp-logo.jpg" alt="">
             </div>
             <div class="col-lg-12 px-4">
                 <p>Dear <?php echo $deanName ?>,</p>
@@ -399,7 +391,7 @@ $pdf->SetFont('helvetica', '', 12);
             </div>
             <div class="col-lg-3"> </div>
             <div class="col-lg-9">
-                <img class="img-responsive" style="width: 100%; margin-top: -80px;" src="assets/images/tap.png" alt="clean">
+                <img class="img-responsive" style="width: 100%; margin-top: -80px;" src="assets/images/tap.jpg" alt="clean">
             </div>
         </div>
         <hr>
@@ -428,7 +420,7 @@ $pdf->SetFont('helvetica', '', 12);
                 </p>
             </div>
             <div class="col-lg-7">
-                <img class="img-responsive" style="width: 100%" src="assets/images/remove germ.png" alt="clean">
+                <img class="img-responsive" style="width: 100%" src="assets/images/remove germ.jpg" alt="clean">
             </div>
             <div class="col-lg-12">
                 <h3 class="border-bottom border-black d-inline-block">
@@ -486,7 +478,7 @@ $pdf->SetFont('helvetica', '', 12);
 
         <div class="row my-4">
                 <div class="col-lg-12 p-4 text-center">
-                    <img class="img-responsive" src="assets/images/logo.png" alt="logo">
+                    <img class="img-responsive" src="assets/images/logo.jpg" alt="logo">
                 </div>
 
                 <div class="col-lg-12 my-4">
@@ -709,7 +701,7 @@ $pdf->SetFont('helvetica', '', 12);
                 <h3> <?php echo $brandName ?> services, and how often they will be done at your facility.</h3>
             </div>
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 20%;" src="assets/images/dusting.png" alt="">
+                <img class="img-responsive" style="width: 20%;" src="assets/images/dusting.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> DUSTING AND DESINFICATION </h3>
@@ -773,7 +765,7 @@ $pdf->SetFont('helvetica', '', 12);
 
          
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 20%;" src="assets/images/vacum.png" alt="">
+                <img class="img-responsive" style="width: 20%;" src="assets/images/vacum.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3>  CARPET AND FLOOR CARE </h3>
@@ -812,7 +804,7 @@ $pdf->SetFont('helvetica', '', 12);
         </div> <br> <hr>
         <div class="row my-4">
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 18%;" src="assets/images/restroom.png" alt="">
+                <img class="img-responsive" style="width: 18%;" src="assets/images/restroom.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> RESTROOM SERVICES </h3>
@@ -844,7 +836,7 @@ $pdf->SetFont('helvetica', '', 12);
             </div>
 
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 18%;" src="assets/images/trash.png" alt="">
+                <img class="img-responsive" style="width: 18%;" src="assets/images/trash.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> TRASH AND MISCELLANEOUS </h3>
@@ -883,7 +875,7 @@ $pdf->SetFont('helvetica', '', 12);
 
         <div class="row my-4">
             <div class="col-lg-12 text-start mt-4">
-                <img class="img-responsive" style="width: 18%;" src="assets/images/kitchen.png" alt="">
+                <img class="img-responsive" style="width: 18%;" src="assets/images/kitchen.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> KITCHEN AREAS </h3>
@@ -921,13 +913,13 @@ $pdf->SetFont('helvetica', '', 12);
             </div>
             <div class="col-lg-12 text-center mt-4"> 
                 <h3> Health - Based Cleaninq System </h3>
-                <img class="img-responsive" style="width: 96%;" src="assets/images/whyKillgerm.png" alt="">
+                <img class="img-responsive" style="width: 96%;" src="assets/images/whyKillgerm.jpg" alt="">
             </div>
         </div> <br> <hr>
 
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" style="width:20%;" src="assets/images/closingTask.png" alt="">
+                <img class="img-responsive" style="width:20%;" src="assets/images/closingTask.jpg" alt="">
             </div>
             <div class="col-lg-12 text-center">
                 <h3> Closing Task: </h3>
@@ -965,7 +957,7 @@ $pdf->SetFont('helvetica', '', 12);
             </div>
             <div class="col-lg-12 text-center mt-4"> 
                 <h3> Our National Accounts </h3>
-                <img class="img-responsive" style="width: 96%;" src="assets/images/companies.png" alt="">
+                <img class="img-responsive" style="width: 96%;" src="assets/images/companies.jpg" alt="">
             </div>
             <div class="col-lg-12 mt-4">
                 <div class="mb-3">
