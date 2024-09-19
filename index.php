@@ -57,6 +57,7 @@
             const url = `http://localhost:2020/promnote/pregenerate_pdf.php?${params.toString()}`;
             document.getElementById('generatedUrl').innerHTML = `<p>Generated URL: <a href="${url}" target="_blank">${url}</a></p>`;
         }
+        
     </script>
     
 </body>

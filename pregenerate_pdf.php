@@ -105,7 +105,7 @@ $pdf->SetFont('helvetica', '', 12);
                             </div>
                         </div>
                         <p>
-                            Axiom Corp System Services are to be performed in the evening, unless otherwise agreed to by the parties.
+                            <?php echo $brandName ?> System Services are to be performed in the evening, unless otherwise agreed to by the parties.
                         </p>
                     </li>
                     <li class="my-3">
@@ -236,7 +236,7 @@ $pdf->SetFont('helvetica', '', 12);
                 <p class="mb-4">Email Address </p>
             </div>
             <div class="col-lg-6">
-                <p class="mt-3 fw-bold"> Axiom Corp </p>
+                <p class="mt-3 fw-bold"> <?php echo $brandName ?> </p>
                 <hr class="mb-0 mt-4">
                 <p class="mb-4">Salses Consultant(Signature and Date)</p>
                 <hr class="mb-0 mt-4">
@@ -953,24 +953,24 @@ $pdf->SetFont('helvetica', '', 12);
             <div class="col-lg-12 mt-4">
                 <div class="mb-3">
                     <label for="brand" class="form-label">Signature : </label>
-                <input type="text" name="name" class="form-control" id="signature" placeholder="Type your full name">
+                    <input type="text" name="customerSignature" class="form-control" id="customerSignature" required placeholder="Type your full name">
                 </div>
 
                 <div class="mb-3">
                     <label for="brand" class="form-label">Date</label>
-                    <input type="date" name="deanName" class="form-control" id="signatureDate" placeholder="brand name">
+                    <input type="date" name="signatureDate" class="form-control" required id="signatureDate" placeholder="brand name">
                 </div>
-               <button class="btn btn-success btn-md m-auto" onclick="generatePDF()" id="generatePdfBtn">Download PDF</button>
+                <button class="btn btn-success btn-md m-auto" onclick="generatePDF()" disabled id="generatePdfBtn">Download PDF</button>
             </div>
         </div>
     </div>
     <script>
-        const signatureInput = document.getElementById('signature');
+        const signatureInput = document.getElementById('customerSignature');
         const signatureDateInput = document.getElementById('signatureDate');
         const generatePdfBtn = document.getElementById('generatePdfBtn');
 
         function checkFields() {
-            if (signatureInput.value.trim() !== '' && signatureDateInput.value !== '') {
+            if (signatureInput.value.trim() != '' && signatureDateInput.value != '') {
                 generatePdfBtn.disabled = false;
             } else {
                 generatePdfBtn.disabled = true;

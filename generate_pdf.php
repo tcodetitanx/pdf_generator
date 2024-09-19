@@ -37,6 +37,8 @@ $pdf->SetFont('helvetica', '', 12);
 // Get data from GET parameters
 
  $brandName=$_GET['brandName']??"";
+ $signature=$_GET['signature']??"";
+ $signatureDate=$_GET['signatureDate']??"";
  $customerName=$_GET['customerName']??"";
  $proposalDate=$_GET['proposalDate']??"";
  $escName=$_GET['escName']??"";
@@ -165,8 +167,8 @@ $content = <<<EOD
         <table width="100%">
             <tr>
                 <td width="45%">
-                    <h2>Customer</h2> <br>
-                    <hr>
+                    <h2>Customer</h2>
+                    <br> <span> $signature </span> <span> $signatureDate </span><hr>
                     <span>Signature and Date</span>
                     <br> <hr>
                     <span style="font-size:12px">Print Name and Title, it's Authorized Representative</span>
