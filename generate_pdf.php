@@ -187,6 +187,7 @@ $content = <<<EOD
         </table>
 
         <p> Please email or fax signed contract to: </p>
+        <p> </p>
      
             
         <img src="assets/images/logo.jpg" alt="logo">
@@ -268,7 +269,7 @@ $content = <<<EOD
                    <p>Sincerely, <br>$escName <br>$brandName North America </p>
                 </td>
                 <td width="79%">
-                    <img src="assets/images/tap.jpg" alt="clean">
+                    
                 </td>
             </tr>
         </table> 
@@ -320,8 +321,7 @@ $content = <<<EOD
             <label for="healthier">  A healthier work place with cross-contamination </label>
             <div>The $brandName  Color-Coding for Health® Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross- contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.</div>
         </div> 
-
-
+        <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p>
         <div>
             <img class="img-responsive" src="assets/images/logo.jpg" alt="logo">
             <h2> Areas to be cleaned: 3X week </h2>
@@ -688,10 +688,6 @@ $content = <<<EOD
             </table>
         </div>
 
-        <div> 
-            <h3> Health - Based Cleaninq System </h3>
-            <img src="assets/images/whyKillgerm.jpg" alt="whyKillgerm">
-        </div>
 
         <div style="font-size:13px">
             <table width="100%">
@@ -700,7 +696,7 @@ $content = <<<EOD
                     <td width="60%"> <p> </p>  <p> </p> <h3> Closing Task: </h3> </td> 
                 </tr>
             </table>
-       
+           <p> </p>
             <table border="1" width="100%" cellpadding="2">
                 <thead>
                     <tr>
@@ -732,9 +728,6 @@ $content = <<<EOD
                     </tr>
                 </tbody>
             </table>
-       
-            <h3> Our National Accounts </h3>
-            <img src="assets/images/companies.jpg" alt="companies">
         </div>
  EOD;
 // Write the content
