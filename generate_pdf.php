@@ -39,7 +39,6 @@ $pdf->SetFont('helvetica', '', 12);
  $brandName=$_GET['brandName']??"";
  $customerName=$_GET['customerName']??"";
  $proposalDate=$_GET['proposalDate']??"";
- $deanName=$_GET['deanName']??"";
  $escName=$_GET['escName']??"";
  $address=$_GET['address']??"";
  $citySateZip=$_GET['citySateZip']??"";
@@ -84,7 +83,7 @@ $content = <<<EOD
                         <input type="checkbox" id="sunday" name="sunday" value="sunday">
                         <label style="font-size:11px" for="sunday"> Sunday </label>
                     </div>
-                    <div>Axiom Corp System Services are to be performed in the evening, unless otherwise agreed to by the parties.</div>
+                    <div>$brandName System Services are to be performed in the evening, unless otherwise agreed to by the parties.</div>
                </li> 
                <li>CUSTOMER acknowledges that  ($brandName   will delegate all  ($brandName   System Services to be performert hereunder to a   $brandName  franchisee and/or subcontractor and  ($brandName   way assign this Service Agreement In Its entirely to a  ($brandName   franchisee and/or subcontractor. </li>
                <br>
@@ -176,7 +175,7 @@ $content = <<<EOD
                 </td>
                 <td width="2%"> </td>
                 <td width="45%">
-                    <h2>Axiom Corp</h2> <br>
+                    <h2>$brandName</h2> <br>
                      <br> <hr>
                     <span>Salses Consultant(Signature and Date)</span>
                      <br> <hr>
@@ -196,8 +195,8 @@ $content = <<<EOD
         <h4 class="heading fw-bold">  $brandName  Safety anal Security Bocumerit </h4>
         <p style="font-size:14px">The $brandName  System places great emphasis on safety and security.   $brandName  Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner. </p>
         <p style="font-size:14px">To help us support your safety and security measures, please answer the questions below.</p>
-        <span>Customer Name: Office Eevolution </span> <span> <hr> </span> <br>
-        <span>Customer Address:  504 W. 800 N. Orem, UT 84057 </span> </span> <span> <hr> </span>
+        <span>Customer Name: $customerName </span> <span> <hr> </span> <br>
+        <span>Customer Address:  $address </span> </span> <span> <hr> </span>
         <ol style="font-size:14px">
             <li>Is protective equipment required in any parts of your facility where the   $brandName  Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
                 <div>
@@ -258,7 +257,7 @@ $content = <<<EOD
 
       
           <img align="right" src="assets/images/logo.jpg" alt="logo">
-          <p>Dear  $deanName ,</p>
+          <p>Dear  $customerName ,</p>
           <p style="font-size:14px">Thank you for the opportunity to present this proposal, which we have customized to your needs and requests.</p>
           <p style="font-size:14px">The $brandName  Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the   $brandName ® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.</p>
           <p style="font-size:14px">Your $brandName  Service Plan and Service Agreernent are attached. Please review them to learn exactly how the   $brandName  Program will meet and exceed your expectations.</p>
