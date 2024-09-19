@@ -372,7 +372,7 @@ $pdf->SetFont('helvetica', '', 12);
                 <img class="img-responsive pe-2" style="width: 100%; margin-top: 55px;" src="assets/images/stamp-logo.jpg" alt="">
             </div>
             <div class="col-lg-12 px-4">
-                <p>Dear <?php echo $deanName ?>,</p>
+                <p>Dear <?php echo $escName ?>,</p>
                 <p>Thank you for the opportunity to present this proposal, which we have customized to your needs and requests.</p>
                 <p>
                   The <?php  echo $brandName ?> Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the <?php  echo $brandName ?>® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.
@@ -389,7 +389,7 @@ $pdf->SetFont('helvetica', '', 12);
                     <?php echo $brandName ?> North America
                 </p>
             </div>
-            <div class="col-lg-3"> </div> 20
+            <div class="col-lg-3"> </div>
             <div class="col-lg-9">
                 <img class="img-responsive" style="width: 100%; margin-top: -80px;" src="assets/images/tap.jpg" alt="clean">
             </div>
@@ -998,16 +998,3 @@ $pdf->SetFont('helvetica', '', 12);
     </script>
 </body>
 </html>
-
-<!--  
-// Write the content
-// $pdf->writeHTML($content, true, false, true, false, '');
-
-// // Add footer with legal verbiage
-// $pdf->SetY(-15);
-// $pdf->SetFont('helvetica', '', 8);
-// $pdf->MultiCell(0, 10, 'Copyright 2010-2020. This form verbiage provided by the Law Offices of Jeremy M. Shorts, LLC and may be used by landlords within the state of Utah. Use of this form shall not constitute legal representation by this firm. Visit www.utahevictionlaw.com for more landlord forms and materials. Phone: 801-610-9879. Rev 5/12/2020', 0, 'C');
-
-// // Output the PDF
-// $pdf->Output('promissory_note_and_eviction_notice.pdf', 'I');
--->
