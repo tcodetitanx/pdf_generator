@@ -737,24 +737,10 @@ $content = <<<EOD
             </table>
         </div>
 
-            <div class="col-lg-12 text-center mt-4"> 
-                <h3> Our National Accounts </h3>
-                <img class="img-responsive" style="width: 96%;" src="assets/images/companies.jpg" alt="">
-            </div>
-            <div class="col-lg-12 mt-4">
-                <div class="mb-3">
-                    <label for="brand" class="form-label">Signature : </label>
-                <input type="text" name="name" class="form-control" id="brand" placeholder="Type your full name">
-                </div>
-
-                <div class="mb-3">
-                    <label for="brand" class="form-label">Date</label>
-                    <input type="date" name="deanName" class="form-control" id="dean" placeholder="brand name">
-                </div>
-               <button class="btn btn-success btn-md m-auto" onclick="generatePDF()" id="generatePdfBtn" disabled>Download PDF</button>
-            </div>
+        <div> 
+            <h3> Our National Accounts </h3>
+            <img src="assets/images/companies.jpg" alt="companies">
         </div>
-    </div>
  EOD;
 // Write the content
 $pdf->writeHTML($content, true, false, true, false, '');
