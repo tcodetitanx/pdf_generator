@@ -691,50 +691,52 @@ $content = <<<EOD
             </table>
         </div>
 
-            <div class="col-lg-12 text-center mt-4"> 
-                <h3> Health - Based Cleaninq System </h3>
-                <img class="img-responsive" style="width: 96%;" src="assets/images/whyKillgerm.jpg" alt="">
-            </div>
-        </div> <br> <hr>
+        <div> 
+            <h3> Health - Based Cleaninq System </h3>
+            <img src="assets/images/whyKillgerm.jpg" alt="whyKillgerm">
+        </div>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <img class="img-responsive" style="width:20%;" src="assets/images/closingTask.jpg" alt="">
-            </div>
-            <div class="col-lg-12 text-center">
-                <h3> Closing Task: </h3>
-                <table class="table table-bordered rounded mt-4 text-start">
-                    <thead>
-                        <tr>
-                            <th scope="col">CLOSING INSTRUCTIONS </th>
-                            <th scope="col"> Frequency </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> Clean and organize janitor closet. </td>
-                            <td> 3 times per week </td>
-                        </tr>
-                     
-                        <tr>
-                            <td> Turn off lights (as instructed).</td>
-                            <td> 3 times per week  </td>
-                        </tr>
-                        <tr>
-                            <td> Lock doors and windows (as instructed). </td>
-                            <td> 3 times per week </td>
-                        </tr>
-                        <tr>
-                            <td> Set alarms (as instructed), </td>
-                            <td> 3 times per week </td>
-                        </tr>
-                        <tr>
-                            <td> Notify customer of any observed irregularities, burnt out lights etc. </td>
-                            <td> 3 times per week </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div style="font-size:13px">
+            <table width="100%">
+                <tr>
+                    <td width="30%"> <img src="assets/images/closingTask.jpg" alt="closingtask">  <br> </td> 
+                    <td width="60%"> <p> </p>  <p> </p> <h3> Closing Task: </h3> </td> 
+                </tr>
+            </table>
+       
+            <table border="1" width="100%" cellpadding="2">
+                <thead>
+                    <tr>
+                        <th width="80%">CLOSING INSTRUCTIONS </th>
+                        <th width="20%"> Frequency </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="80%"> Clean and organize janitor closet. </td>
+                        <td width="20%"> 3 times per week </td>
+                    </tr>
+                    
+                    <tr>
+                        <td> Turn off lights (as instructed).</td>
+                        <td> 3 times per week  </td>
+                    </tr>
+                    <tr>
+                        <td> Lock doors and windows (as instructed). </td>
+                        <td> 3 times per week </td>
+                    </tr>
+                    <tr>
+                        <td> Set alarms (as instructed), </td>
+                        <td> 3 times per week </td>
+                    </tr>
+                    <tr>
+                        <td> Notify customer of any observed irregularities, burnt out lights etc. </td>
+                        <td> 3 times per week </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
             <div class="col-lg-12 text-center mt-4"> 
                 <h3> Our National Accounts </h3>
                 <img class="img-responsive" style="width: 96%;" src="assets/images/companies.jpg" alt="">
