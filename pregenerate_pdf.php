@@ -389,10 +389,7 @@ $pdf->SetFont('helvetica', '', 12);
                     <?php echo $brandName ?> North America
                 </p>
             </div>
-            <div class="col-lg-3"> </div>
-            <div class="col-lg-9">
-                <img class="img-responsive" style="width: 100%; margin-top: -80px;" src="assets/images/tap.jpg" alt="clean">
-            </div>
+           
         </div>
         <hr>
         <div class="row my-4">
@@ -911,11 +908,8 @@ $pdf->SetFont('helvetica', '', 12);
                     </tbody>
                 </table>
             </div>
-            <div class="col-lg-12 text-center mt-4"> 
-                <h3> Health - Based Cleaninq System </h3>
-                <img class="img-responsive" style="width: 96%;" src="assets/images/whyKillgerm.jpg" alt="">
-            </div>
-        </div> <br> <hr>
+          
+        </div> <br> 
 
         <div class="row">
             <div class="col-lg-12">
@@ -955,10 +949,7 @@ $pdf->SetFont('helvetica', '', 12);
                     </tbody>
                 </table>
             </div>
-            <div class="col-lg-12 text-center mt-4"> 
-                <h3> Our National Accounts </h3>
-                <img class="img-responsive" style="width: 96%;" src="assets/images/companies.jpg" alt="">
-            </div>
+           
             <div class="col-lg-12 mt-4">
                 <div class="mb-3">
                     <label for="brand" class="form-label">Signature : </label>
