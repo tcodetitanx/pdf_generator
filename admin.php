@@ -9,11 +9,6 @@
             </div>
 
             <div class="mb-3">
-                <label for="brand" class="form-label">Dean Name</label>
-               <input type="text" name="deanName" class="form-control" id="dean" placeholder="dean name">
-            </div>
-
-            <div class="mb-3">
                 <label for="brand" class="form-label">Executive Sales Consultant</label>
                <input type="text" name="escName" class="form-control" id="esc" placeholder="Executive Sales Consultant">
             </div>
@@ -54,13 +49,12 @@
             const params = new URLSearchParams(formData);
             const brandName=formData.get('brandName')||"";
             const customerName=formData.get('customerName')||"";
-            const deanName=formData.get('deanName')||"";
             const escName=formData.get('escName')||"";
             const address=formData.get('address')||"";
             const proposalDate=formData.get('proposalDate')||"";
             const citySateZip=formData.get('citySateZip')||"";
             const monthlyCharges=formData.get('monthlyCharges')||"";
-            const url = `http://localhost:2020/promnote/index.php?${params.toString()}`;
+            const url = `http://localhost/generatePdf/index?${params.toString()}`;
             document.getElementById('generatedUrl').innerHTML = `<p>Generated URL: <a href="${url}" target="_blank">${url}</a></p>`;
         }
     </script>

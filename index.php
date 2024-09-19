@@ -38,7 +38,6 @@ $pdf->SetFont('helvetica', '', 12);
  $brandName=$_GET['brandName']??"";
  $customerName=$_GET['customerName']??"";
  $proposalDate=$_GET['proposalDate']??"";
- $deanName=$_GET['deanName']??"";
  $escName=$_GET['escName']??"";
  $address=$_GET['address']??"";
  $citySateZip=$_GET['citySateZip']??"";
@@ -105,7 +104,7 @@ $pdf->SetFont('helvetica', '', 12);
                             </div>
                         </div>
                         <p>
-                            Axiom Corp System Services are to be performed in the evening, unless otherwise agreed to by the parties.
+                            <?php echo($brandName) ?> Services are to be performed in the evening, unless otherwise agreed to by the parties.
                         </p>
                     </li>
                     <li class="my-3">
@@ -236,7 +235,7 @@ $pdf->SetFont('helvetica', '', 12);
                 <p class="mb-4">Email Address </p>
             </div>
             <div class="col-lg-6">
-                <p class="mt-3 fw-bold"> Axiom Corp </p>
+                <p class="mt-3 fw-bold"> <?php echo($brandName) ?> </p>
                 <hr class="mb-0 mt-4">
                 <p class="mb-4">Salses Consultant(Signature and Date)</p>
                 <hr class="mb-0 mt-4">
@@ -263,10 +262,10 @@ $pdf->SetFont('helvetica', '', 12);
                   To help us support your safety and security measures, please answer the questions below.
                 </p>
                 <p>
-                   <span class="d-inline-block" style="width:16%">  Customer Name: </span> <span class="border-bottom border-black d-inline-block float-left" style="width: 78%;"> Office Eevolution </span>
+                   <span class="d-inline-block" style="width:16%">  Customer Name: </span> <span class="border-bottom border-black d-inline-block float-left" style="width: 78%;"> <?php echo $customerName ?> </span>
                 </p>
                 <p>
-                    <span class="d-inline-block" style="width:16%">  Customer Address: </span> <span class="border-bottom border-black d-inline-block float-left" style="width: 78%;"> 504 W. 800 N. Orem, UT 84057 </span>
+                    <span class="d-inline-block" style="width:16%">  Customer Address: </span> <span class="border-bottom border-black d-inline-block float-left" style="width: 78%;"> <?php echo $address?> </span>
                 </p>
             </div>
         </div>
@@ -372,7 +371,7 @@ $pdf->SetFont('helvetica', '', 12);
                 <img class="img-responsive pe-2" style="width: 100%; margin-top: 55px;" src="assets/images/stamp-logo.jpg" alt="">
             </div>
             <div class="col-lg-12 px-4">
-                <p>Dear <?php echo $deanName ?>,</p>
+                <p>Dear <?php echo $customerName ?>,</p>
                 <p>Thank you for the opportunity to present this proposal, which we have customized to your needs and requests.</p>
                 <p>
                   The <?php  echo $brandName ?> Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the <?php  echo $brandName ?>® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.
