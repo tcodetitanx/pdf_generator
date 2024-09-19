@@ -39,7 +39,6 @@ $pdf->SetFont('helvetica', '', 12);
  $brandName=$_GET['brandName']??"";
  $customerName=$_GET['customerName']??"";
  $proposalDate=$_GET['proposalDate']??"";
- $deanName=$_GET['deanName']??"";
  $escName=$_GET['escName']??"";
  $address=$_GET['address']??"";
  $citySateZip=$_GET['citySateZip']??"";
@@ -179,7 +178,7 @@ $content = <<<EOD
                     <h2>Axiom Corp</h2> <br>
                      <br> <hr>
                     <span>Salses Consultant(Signature and Date)</span>
-                     <br> <hr>
+                     <br> $escName <hr>
                     <span style="font-size:12px">Print Name and Title, it's Authorized Representative</span>
                      <br> <hr>
                     <span>Service Start Date</span>
@@ -188,7 +187,6 @@ $content = <<<EOD
         </table>
 
         <p> Please email or fax signed contract to: </p>
-     
      
             
         <img src="assets/images/logo.jpg" alt="logo">
@@ -683,8 +681,7 @@ $content = <<<EOD
                         <td> 3 times per week </td>
                     </tr>
                     <tr>
-                        <td> Spot Clean Counters, Tables and Sinks</td>
-                        <td>Spot clean kitchen counters, tables and sinks to remove visible soil. </td>
+                        <td> Spot clean kitchen counters, tables and sinks to remove visible soil. </td>
                         <td> 3 times per week </td>
                     </tr>
                 </tbody>
@@ -707,7 +704,7 @@ $content = <<<EOD
             <table border="1" width="100%" cellpadding="2">
                 <thead>
                     <tr>
-                        <th width="80%">CLOSING INSTRUCTIONS </th>
+                        <th width="80%"> CLOSING INSTRUCTIONS </th>
                         <th width="20%"> Frequency </th>
                     </tr>
                 </thead>
@@ -735,9 +732,7 @@ $content = <<<EOD
                     </tr>
                 </tbody>
             </table>
-        </div>
-
-        <div> 
+       
             <h3> Our National Accounts </h3>
             <img src="assets/images/companies.jpg" alt="companies">
         </div>
@@ -748,7 +743,6 @@ $pdf->writeHTML($content, true, false, true, false, '');
 // // Add footer with legal verbiage
 $pdf->SetY(-15);
 $pdf->SetFont('helvetica', '', 8);
-$pdf->MultiCell(0, 10, 'Copyright 2010-2020. This form verbiage provided by the Law Offices of Jeremy M. Shorts, LLC and may be used by landlords within the state of Utah. Use of this form shall not constitute legal representation by this firm. Visit www.utahevictionlaw.com for more landlord forms and materials. Phone: 801-610-9879. Rev 5/12/2020', 0, 'C');
 ob_end_clean(); 
 // // Output the PDF
 $pdf->Output('promissory_note_and_eviction_notice.pdf', 'I');
