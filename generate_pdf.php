@@ -51,7 +51,7 @@ $content = <<<EOD
         <img src="assets/images/logo.jpg" alt="logo">
          <p> </p>
         <h3>$brandName</h3>
-        <p style="font-size:14px">The Undersigned ($customerName) hereby accepts the proposal of Melton Franchise System, Inc, $brandName, and the parties agree that $brandName's franchises and/or subcontractors will supply ($brandName System Services for CUSTOMER'S premises located at:</p>
+        <p style="font-size:14px">The Undersigned ($customerName) hereby accepts the proposal $brandName, and the parties agree that $brandName's franchises and/or subcontractors will supply ($brandName System Services for CUSTOMER'S headquarters located at:</p>
         <ul>
             <li>Customer: $customerName</li>
             <li>Street Address: $address</li>
