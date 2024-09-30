@@ -7,10 +7,10 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 
 // Set document information
 $pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Your Company Name');
-$pdf->SetTitle('Promissory Note and Eviction Notice');
-$pdf->SetSubject('Promissory Note and Eviction Notice Agreement');
-$pdf->SetKeywords('Promissory Note, Eviction Notice, Agreement, Legal Document');
+$pdf->SetAuthor('Axiom Corp');
+$pdf->SetTitle('Contractual Agreement');
+$pdf->SetSubject('Contractual Agreement');
+$pdf->SetKeywords('Contractual Agreement');
 
 // Remove default header/footer
 $pdf->setPrintHeader(false);
@@ -35,7 +35,7 @@ $pdf->AddPage();
 $pdf->SetFont('helvetica', '', 12);
 
 // Get data from GET parameters
-$brandName = $_GET['brandName'] ?? "";
+$contract_provider = $_GET['contract_provider'] ?? "";
 $signature = $_GET['signature'] ?? "";
 $signatureDate = $_GET['signatureDate'] ?? "";
 $customerName = $_GET['customerName'] ?? "";
@@ -44,38 +44,50 @@ $escName = $_GET['escName'] ?? "";
 $address = $_GET['address'] ?? "";
 $cityStateZip = $_GET['cityStateZip'] ?? "";
 $monthlyCharges = $_GET['monthlyCharges'] ?? 0;
+$additionalAddresses = $_GET['additionalAddresses'] ?? "";
+$contract_name = "axiom_". $customerName;
+
+if (!empty($additionalAddresses)) {
+    $exhibit_clause = "<p>$contract_provider also accepts to clean the properties listed by address in Exhibit A at the end of this contract. They shall be cleaned according to the same schedule and to the same extent as outlined in the contract. 
+        </p>";
+}
+else
+{
+    $exhibit_clause = "";
+}
+
 
 // Create the content
 $content = <<<EOD
         
         <img src="assets/images/logo.jpg" alt="logo">
          <p> </p>
-        <h3>$brandName</h3>
-        <p style="font-size:14px">The Undersigned ($customerName) hereby accepts the proposal $brandName, and the parties agree that $brandName's franchises and/or subcontractors will supply ($brandName System Services for CUSTOMER'S headquarters located at:</p>
+        <h3>$contract_provider</h3>
+        <p style="font-size:14px">The Undersigned ($customerName) hereby accepts the proposal $contract_provider, and the parties agree that $contract_provider's franchises and/or subcontractors will supply ($contract_provider System Services for CUSTOMER'S headquarters located at:</p>
         <ul>
             <li>Customer: $customerName</li>
             <li>Street Address: $address</li>
             <li>City State Zip: $cityStateZip</li>
         </ul>
-
+        $exhibit_clause
         <p>Upon the following terms</p>
             <ol style="font-size:14px">
                 <li> Monthly Services Charge: 
                     <div>$$monthlyCharges per month, plus taxes, if applicable; to include 5 times(s) per week services. Initial</div>
                     <div>Service Days <br> 
-                        <input type="checkbox" id="monday" name="monday" value="monday">
+                        <input type="checkbox" id="monday" name="monday" value="monday" checked>
                         <label style="font-size:11px" for="monday"> Monday </label>
 
-                        <input type="checkbox" id="tuesday" name="tuesday" value="tuesday">
+                        <input type="checkbox" id="tuesday" name="tuesday" value="tuesday" checked>
                         <label style="font-size:11px" for="tuesday"> Tuesday </label>
 
-                        <input type="checkbox" id="wednesday" name="wednesday" value="wednesday">
+                        <input type="checkbox" id="wednesday" name="wednesday" value="wednesday" checked>
                         <label style="font-size:11px" for="wednesday"> Wednesday </label>
 
-                        <input type="checkbox" id="thursday" name="thursday" value="thursday">
+                        <input type="checkbox" id="thursday" name="thursday" value="thursday" checked>
                         <label style="font-size:11px" for="thursday"> Thursday </label>
 
-                        <input type="checkbox" id="friday" name="friday" value="friday">
+                        <input type="checkbox" id="friday" name="friday" value="friday" checked>
                         <label style="font-size:11px" for="friday"> Friday </label>
 
                         <input type="checkbox" id="saturday" name="saturday" value="saturday">
@@ -84,19 +96,19 @@ $content = <<<EOD
                         <input type="checkbox" id="sunday" name="sunday" value="sunday">
                         <label style="font-size:11px" for="sunday"> Sunday </label>
                     </div>
-                    <div>$brandName System Services are to be performed in the evening, unless otherwise agreed to by the parties.</div>
+                    <div>$contract_provider System Services are to be performed in the evening, unless otherwise agreed to by the parties.</div>
                </li> 
-               <li>CUSTOMER acknowledges that ($brandName) will delegate all ($brandName) System Services to be performed hereunder to a $brandName franchisee and/or subcontractor and ($brandName) may assign this Service Agreement in its entirety to a ($brandName) franchisee and/or subcontractor.</li>
+               <li>CUSTOMER acknowledges that ($contract_provider) will delegate all ($contract_provider) System Services to be performed hereunder to a $contract_provider franchisee and/or subcontractor and ($contract_provider) may assign this Service Agreement in its entirety to a ($contract_provider) franchisee and/or subcontractor.</li>
                <br>
-               <li>Included in the Service Charge will be service, cleaning supplies, and any equipment which will be furnished by the ($brandName) franchisee.
-                 The Service Charge does not include liners, paper supplies, and toiletries, which can be provided at CUSTOMER's expense, at competitive prices. The Service Charge also does not include any use tax, tax on sales, services or supplies, or other such tax, which taxes shall be paid by CUSTOMER. CUSTOMER agrees to reimburse ($brandName) the amount of any such taxes if paid by ($brandName) on CUSTOMER's behalf.
+               <li>Included in the Service Charge will be service, cleaning supplies, and any equipment which will be furnished by the ($contract_provider) franchisee.
+                 The Service Charge does not include liners, paper supplies, and toiletries, which can be provided at CUSTOMER's expense, at competitive prices. The Service Charge also does not include any use tax, tax on sales, services or supplies, or other such tax, which taxes shall be paid by CUSTOMER. CUSTOMER agrees to reimburse ($contract_provider) the amount of any such taxes if paid by ($contract_provider) on CUSTOMER's behalf.
                </li>
                <br>
-              <li>All $brandName System Services specified in the "($brandName) Service Plan" attached to this Service Agreement as Exhibit A will be provided to CUSTOMER in a satisfactory manner. CUSTOMER acknowledges that only those Services and/or Additional Services specifically identified in the ($brandName) Service Plan will be provided under this Service Agreement.</li>
+              <li>All $contract_provider System Services specified in the "($contract_provider) Service Plan" attached to this Service Agreement as Exhibit A will be provided to CUSTOMER in a satisfactory manner. CUSTOMER acknowledges that only those Services and/or Additional Services specifically identified in the ($contract_provider) Service Plan will be provided under this Service Agreement.</li>
                <br> <br>
-              <li>All $brandName franchises have successfully completed ($brandName)'s comprehensive training program and are required to carry insurance and a janitorial bond.</li>
+              <li>All $contract_provider franchises have successfully completed ($contract_provider)'s comprehensive training program and are required to carry insurance and a janitorial bond.</li>
               <br>
-             <li>Additional services, not included in ($brandName)'s Service Charge, to be performed upon request, priced per occurrence, at CUSTOMER'S expense, include:</li>
+             <li>Additional services, not included in ($contract_provider)'s Service Charge, to be performed upon request, priced per occurrence, at CUSTOMER'S expense, include:</li>
              <br>
              <br>
                
@@ -150,18 +162,18 @@ $content = <<<EOD
                        <br> <br>
                         (b) Termination/Notice: If a party to this Service Agreement fails to perform its obligations (the "non-performing party"), the party claiming non-performance shall send the non-performing party written notice, specifying the manner of non-performance. This notice will provide that the non-performing party shall have fifteen (15) days from receipt of the notice to cure or correct the items of non-performance (the "Cure Period"). If these items are not corrected or cured within the Cure Period, the claiming party may issue a thirty (30) day written notice, of termination and/or pursue other available remedies for default.
                         <br> <br>
-                        If the CUSTOMER's notice under this 117(b) concerns service issues, the CUSTOMER shall permit the $brandName or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a $brandName representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle $brandName to collect the full amount due through the Term of this Service Agreement.
+                        If the CUSTOMER's notice under this 117(b) concerns service issues, the CUSTOMER shall permit the $contract_provider or subcontractor access to the premises during the Cure Period to cure the service issue; and shall also accompany a $contract_provider representative on an inspection of the premises during the fifteen (15) day cure period. Failure to comply will entitle $contract_provider to collect the full amount due through the Term of this Service Agreement.
                         <br> <br>
-                        (c) Notwithstanding the above, ($brandName) may, but shall not be obligated to, terminate this Service Agreement immediately for non-payment by CUSTOMER of Service Charges due.
+                        (c) Notwithstanding the above, ($contract_provider) may, but shall not be obligated to, terminate this Service Agreement immediately for non-payment by CUSTOMER of Service Charges due.
                 </li> <br>  <br> 
  
-                <li>The Service Charge will remain in effect for one year unless there are changes in the original specifications for the premises. In the event of such changes, CUSTOMER will advise $brandName accordingly, and an adjustment in the Service Charge, as agreed to by the parties, will be made.</li> <br> 
-                <li>CUSTOMER agrees that it will not employ or contract with any $brandName employee, franchisee, or any of the franchisee's employees during the term of this Service Agreement or for one hundred and eighty (180) days after termination of this Service Agreement, without $brandName's written consent.</li> <br> 
-                <li>$brandName will bill CUSTOMER monthly, and CUSTOMER agrees to pay $brandName the amount that is due and owing under the terms of this Service Agreement within 10 days of billing date. Late payments will incur service and finance charges. In the event of default on payment, CUSTOMER agrees to pay $brandName's attorney's fees and costs for collection.</li> <br> 
-                <li>Services shall be performed as stated in the $brandName Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.</li> <br> 
-                <li>If "Additional Special Services" are included in the $brandName Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included in CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.</li> <br> 
-                <li>The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a $brandName, a subcontractor or another third party.</li> <br> 
-                <li>This Service Agreement and attached exhibits constitute the complete agreement of the parties concerning the provision of cleaning services to the CUSTOMER, and supersedes all other prior or contemporaneous agreements between the parties, whether written or oral, on the same subject. No waiver or modification of this Service Agreement shall be valid unless in writing and executed by $brandName and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order or other form subsequently submitted by CUSTOMER to $brandName become a part of this Service Agreement, and $brandName shall not be bound by any such terms and conditions.</li> <br> 
+                <li>The Service Charge will remain in effect for one year unless there are changes in the original specifications for the premises. In the event of such changes, CUSTOMER will advise $contract_provider accordingly, and an adjustment in the Service Charge, as agreed to by the parties, will be made.</li> <br> 
+                <li>CUSTOMER agrees that it will not employ or contract with any $contract_provider employee, franchisee, or any of the franchisee's employees during the term of this Service Agreement or for one hundred and eighty (180) days after termination of this Service Agreement, without $contract_provider's written consent.</li> <br> 
+                <li>$contract_provider will bill CUSTOMER monthly, and CUSTOMER agrees to pay $contract_provider the amount that is due and owing under the terms of this Service Agreement within 10 days of billing date. Late payments will incur service and finance charges. In the event of default on payment, CUSTOMER agrees to pay $contract_provider's attorney's fees and costs for collection.</li> <br> 
+                <li>Services shall be performed as stated in the $contract_provider Service Plan attached to this Service Agreement with the exception of the following six (6) legal holidays: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day and Christmas Day. No Service Charge credits will be issued for these holidays. However, service can be provided on these holidays at an additional cost if required. Services shall be scheduled during the hours approved or directed by manager/owner.</li> <br> 
+                <li>If "Additional Special Services" are included in the $contract_provider Service Plan attached to this Service Agreement, and if CUSTOMER cancels any periodic Special Services described therein for which a prorated monthly charge is included in CUSTOMER'S total monthly Service Charge, any amount owing by CUSTOMER for Special Services performed prior to the cancellation shall be payable in full no later than five (5) days after the cancellation.</li> <br> 
+                <li>The undersigned warrant and represent that they have full authority to enter into this Service Agreement, and that it will be binding upon the parties and their respective successors and assigns. Specifically, CUSTOMER acknowledges that this Service Agreement may be assigned in its entirety to a $contract_provider, a subcontractor or another third party.</li> <br> 
+                <li>This Service Agreement and attached exhibits constitute the complete agreement of the parties concerning the provision of cleaning services to the CUSTOMER, and supersedes all other prior or contemporaneous agreements between the parties, whether written or oral, on the same subject. No waiver or modification of this Service Agreement shall be valid unless in writing and executed by $contract_provider and CUSTOMER. Additionally, in no event shall the terms and conditions of any purchase order or other form subsequently submitted by CUSTOMER to $contract_provider become a part of this Service Agreement, and $contract_provider shall not be bound by any such terms and conditions.</li> <br> 
         </ol>
         <table width="100%">
             <tr>
@@ -176,7 +188,7 @@ $content = <<<EOD
                 </td>
                 <td width="2%"></td>
                 <td width="45%">
-                    <h2>$brandName</h2> <br>
+                    <h2>$contract_provider</h2> <br>
                      <br> <hr>
                     <span>Sales Consultant (Signature and Date)</span>
                      <br> $escName <hr>
@@ -193,13 +205,13 @@ $content = <<<EOD
             
         <img src="assets/images/logo.jpg" alt="logo">
         <p></p>
-        <h4 class="heading fw-bold">$brandName Safety and Security Document</h4>
-        <p style="font-size:14px">The $brandName System places great emphasis on safety and security. $brandName Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner.</p>
+        <h4 class="heading fw-bold">$contract_provider Safety and Security Document</h4>
+        <p style="font-size:14px">The $contract_provider System places great emphasis on safety and security. $contract_provider Business Owners are trained and certified on Personal Safety, Customer Account Security, Emergency Actions, Accident Investigation and Reporting, and other aspects of cleaning your facility in a safe and secure manner.</p>
         <p style="font-size:14px">To help us support your safety and security measures, please answer the questions below.</p>
         <span>Customer Name: $customerName</span> <span><hr></span> <br>
         <span>Customer Address: $address</span> </span> <span><hr></span>
         <ol style="font-size:14px">
-            <li>Is protective equipment required in any parts of your facility where the $brandName Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
+            <li>Is protective equipment required in any parts of your facility where the $contract_provider Business Owner or its employees will be providing services? This might include hard hats, eye protection, steel-toed shoes, gloves, gowns, masks, or other personal protective gear.
                 <div>
                     <input type="checkbox" id="yes1" name="yes1" value="yes1">
                     <label for="yes1">Yes</label> <br>
@@ -208,7 +220,7 @@ $content = <<<EOD
                     <p>If yes, please document the equipment that is required and the areas in which it should be used.</p>
                 </div>
             </li>
-            <li>Will the $brandName Business Owner need to disarm and arm a building security system?
+            <li>Will the $contract_provider Business Owner need to disarm and arm a building security system?
                 <div>
                     <input type="checkbox" id="yes2" name="yes2" value="yes2">
                     <label for="yes2">Yes</label> <br>
@@ -217,7 +229,7 @@ $content = <<<EOD
                 </div>
             </li>
 
-            <li>Will the $brandName Business Owner be given a set of keys for your facility?
+            <li>Will the $contract_provider Business Owner be given a set of keys for your facility?
                 <div>
                     <input type="checkbox" id="yes3" name="yes3" value="yes3">
                     <label for="yes3">Yes</label> <br>
@@ -229,9 +241,9 @@ $content = <<<EOD
             <li>Asbestos
                  <div>
                     <input type="checkbox" id="yes4" name="yes4" value="yes4">
-                    <label for="yes4">I am aware of Asbestos in the facility where the $brandName Franchised Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the $brandName Business.</label> <br>
+                    <label for="yes4">I am aware of Asbestos in the facility where the $contract_provider Franchised Business will be providing services, and if applicable, I will provide the Asbestos Control Plan to the representative of the $contract_provider Business.</label> <br>
                     <input type="checkbox" id="no4" name="no4" value="no4">
-                    <label for="no4">I am not aware of Asbestos in the facility where the $brandName Business will be providing services.</label>
+                    <label for="no4">I am not aware of Asbestos in the facility where the $contract_provider Business will be providing services.</label>
                 </div>
             </li>
             <li>Other: 
@@ -250,7 +262,7 @@ $content = <<<EOD
             <p></p> <p></p> <p> <p></p> <p>
             <p align="center">By:</p>
             <p align="center">$escName <br> Executive Sales Consultant <br>
-                $brandName  
+                $contract_provider  
             </p>
             <p align="center">Date:</p>
             <p align="center">$proposalDate</p>
@@ -260,14 +272,14 @@ $content = <<<EOD
           <img align="right" src="assets/images/logo.jpg" alt="logo">
           <p>Dear $customerName,</p>
           <p style="font-size:14px">Thank you for the opportunity to present this proposal, which we have customized to your needs and requests.</p>
-          <p style="font-size:14px">The $brandName Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the $brandName® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.</p>
-          <p style="font-size:14px">Your $brandName Service Plan and Service Agreement are attached. Please review them to learn exactly how the $brandName Program will meet and exceed your expectations.</p>
+          <p style="font-size:14px">The $contract_provider Health-Based Cleaning System Program is the first choice for offices, schools, daycares, retail businesses, restaurants, gyms, outpatient and ambulatory surgery centers, and Fortune 500 companies across the country. With the $contract_provider® Program your facility will look clean and smell clean and actually be a cleaner, healthier place for everyone.</p>
+          <p style="font-size:14px">Your $contract_provider Service Plan and Service Agreement are attached. Please review them to learn exactly how the $contract_provider Program will meet and exceed your expectations.</p>
           <p style="font-size:14px">Thank you again. We look forward to working with you!</p>
           
           <table width="100%">
             <tr>
                 <td width="20%">
-                   <p>Sincerely, <br>$escName <br>$brandName</p>
+                   <p>Sincerely, <br>$escName <br>$contract_provider</p>
                 </td>
                 <td width="79%">
                     
@@ -291,8 +303,8 @@ $content = <<<EOD
                    
                         <input type="checkbox" id="Kitchen" name="Kitchen" value="Kitchen">
                         <label for="Kitchen">Kitchen</label>
-                        <p>$brandName Health-Based Cleaning System uses scientifically proven cleaning supplies, tools and techniques to ensure that these important priorities will be handled properly.</p>
-                        <h3>The $brandName Difference</h3>
+                        <p>$contract_provider Health-Based Cleaning System uses scientifically proven cleaning supplies, tools and techniques to ensure that these important priorities will be handled properly.</p>
+                        <h3>The $contract_provider Difference</h3>
                     </div>
                 </td>
                 <td width="54%">
@@ -304,23 +316,23 @@ $content = <<<EOD
         <div style="font-size:14px">
             <input type="checkbox" id="office" name="office" value="office">
             <label for="office">Get the best value for your cleaning budget</label>
-           <div>A lot has changed in the way that cleaning is done today. The work can be much faster than in the past. $brandName leads the industry in finding and using the best tools, techniques and training to give you a cleaning schedule that delivers more value within your budget.</div>
+           <div>A lot has changed in the way that cleaning is done today. The work can be much faster than in the past. $contract_provider leads the industry in finding and using the best tools, techniques and training to give you a cleaning schedule that delivers more value within your budget.</div>
             <br>
             <input type="checkbox" id="office" name="office" value="office">
             <label for="office">Cleaner work and reception areas, better air quality.</label> 
-            <div>$brandName Owners use multi-filtration vacuums to improve indoor air quality by removing 99.97% of dust, dirt, bacteria, mold, yeast, and particles down to 0.3 microns. In contrast, traditional commercial vacuums return 40% of the dirt they pick up directly into the air.</div>
+            <div>$contract_provider Owners use multi-filtration vacuums to improve indoor air quality by removing 99.97% of dust, dirt, bacteria, mold, yeast, and particles down to 0.3 microns. In contrast, traditional commercial vacuums return 40% of the dirt they pick up directly into the air.</div>
             <br>
             <input type="checkbox" id="restroom" name="restroom" value="restroom">
             <label for="restroom">Restrooms that look, smell, and are actually clean.</label>
-            <div>$brandName uses environmentally safe, hospital-grade disinfectant cleaning products, which are recommended by the Centers for Disease Control (CDC) and many medical studies to limit the spread of germs, especially in bathrooms.</div>
+            <div>$contract_provider uses environmentally safe, hospital-grade disinfectant cleaning products, which are recommended by the Centers for Disease Control (CDC) and many medical studies to limit the spread of germs, especially in bathrooms.</div>
             <br> 
             <input type="checkbox" id="communication" name="communication" value="communication">
             <label for="communication">Consistent cleaning and good communication with the cleaners</label>
-            <div>Your $brandName Owner was trained and certified to use $brandName Health-Based Cleaning System so that you get consistent, high-quality results. The cleaning team will use a log book to communicate notes or questions to you, and you will have direct access to them, to your local $brandName office, and to phone support 24 hours a day.</div>
+            <div>Your $contract_provider Owner was trained and certified to use $contract_provider Health-Based Cleaning System so that you get consistent, high-quality results. The cleaning team will use a log book to communicate notes or questions to you, and you will have direct access to them, to your local $contract_provider office, and to phone support 24 hours a day.</div>
             <br>
             <input type="checkbox" id="healthier" name="healthier" value="healthier">
             <label for="healthier">A healthier workplace with cross-contamination prevention</label>
-            <div>The $brandName Color-Coding for Health® Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross-contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.</div>
+            <div>The $contract_provider Color-Coding for Health® Program uses color-coded microfiber cleaning cloths and mop pads to prevent cross-contamination. In contrast, traditional cleaners use dirty rags and smelly string mops that merely transfer dirt and bacteria from one area to the next.</div>
         </div> 
         <p></p> <p></p> <p></p> <p></p> <p></p> <p></p> <p></p> <p></p>
         <div>
@@ -472,7 +484,7 @@ $content = <<<EOD
         <br> 
 
         <div style="font-size:13px;">
-            <a style="font-size:20px; font-weight:bold; color:black;">$brandName services, and how often they will be done at your facility:</a>
+            <a style="font-size:20px; font-weight:bold; color:black;">$contract_provider services, and how often they will be done at your facility:</a>
              <br> 
             <table width="100%">
                 <tr>
@@ -636,7 +648,7 @@ $content = <<<EOD
                     </tr>
                     <tr>
                         <td> Empty Cans and Remove Trash  </td>
-                        <td> Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the   $brandName  Business Owner or   $brandName </td>
+                        <td> Empty trash that is contained in trash cans, in an area designated specifically for trash, or clearly labeled as trash and transport to customer's trash removal or storage area. Replace liners, spot clean receptacles as needed and take trash to designated area on customer premises. Please note: Any item that is in trash cans, designated trash areas, or clearly labeled as trash will be considered trash regardless of the content, and its loss will not be the responsibility of the   $contract_provider  Business Owner or   $contract_provider </td>
                         <td> 3 times per week </td>
                     </tr>
                     <tr>
@@ -694,7 +706,7 @@ $content = <<<EOD
             <table width="100%">
                 <tr>
                     <td width="30%"> <img src="assets/images/closingTask.jpg" alt="closingtask">  <br> </td> 
-                    <td width="60%"> <p> </p>  <p> </p> <h3> Closing Task: </h3> </td> 
+                    <td width="60%"> <p> </p>  <p> </p> <h3> Closing Tasks: </h3> </td> 
                 </tr>
             </table>
            <p> </p>
@@ -730,13 +742,24 @@ $content = <<<EOD
                 </tbody>
             </table>
         </div>
- EOD;
-// Write the content
-$pdf->writeHTML($content, true, false, true, false, '');
+        EOD;
+        $pdf->writeHTML($content, true, false, true, false, '');
 
-// // Add footer with legal verbiage
+if (!empty($additionalAddresses)) {
+    $pdf->AddPage();
+    $pdf->SetFont('helvetica', 'B', 16);
+    $pdf->Cell(0, 10, 'Exhibit A: Additional Addresses', 0, 1, 'C');
+    $pdf->SetFont('helvetica', '', 12);
+    $addresses = explode("\n", $additionalAddresses);
+    foreach ($addresses as $address) {
+        $pdf->MultiCell(0, 10, trim($address), 0, 'L');
+    }
+}
+
+// Add footer with legal verbiage
 $pdf->SetY(-15);
 $pdf->SetFont('helvetica', '', 8);
 ob_end_clean(); 
-// // Output the PDF
-$pdf->Output('promissory_note_and_eviction_notice.pdf', 'I');
+// Output the PDF
+
+$pdf->Output($contract_name, 'I');

@@ -1,11 +1,11 @@
 
 <?php include 'header.php';?>
     <div class="container border rounded p-4">
-        <h2 class="heading mb-3">Axiom Corp Generate Promissory Note URL</h2>
+        <h2 class="heading mb-3">Axiom Corp Contract URL Generator</h2>
         <form id="form">
             <div class="mb-3">
-                <label for="brand" class="form-label">Brand Name</label>
-               <input type="text" name="brandName" class="form-control" id="brand" placeholder="Brand Name">
+                <label for="brand" class="form-label">Contract Provider</label>
+               <input type="text" name="contract_provider" class="form-control" id="brand" placeholder="Contract Provider">
             </div>
 
             <div class="mb-3">
@@ -30,12 +30,16 @@
 
             <div class="mb-3">
                 <label for="cityStateZip" class="form-label">City State Zip</label>
-                <input type="text" name="citySateZip" class="form-control" id="cityStateZip" placeholder="City, State, Zip">
+                <input type="text" name="cityStateZip" class="form-control" id="cityStateZip" placeholder="City, State, Zip">
             </div>
 
             <div class="mb-3">
                 <label for="cityStateZip" class="form-label">Monthly Charges</label>
                <input type="number" min="0" name="monthlyCharges" class="form-control" id="monthlyCharges" placeholder="340">
+            </div>
+            <div class="mb-3">
+            <label for="additionalAddresses" class="form-label">Additional Addresses (Optional)</label>
+            <textarea class="form-control" id="additionalAddresses" name="additionalAddresses" rows="4" placeholder="Enter additional addresses, one per line"></textarea>
             </div>
             <button class="btn btn-sm btn-success" type="button" onclick="generateUrl()">Generate URL</button>
         </form>
@@ -47,14 +51,15 @@
             const form = document.getElementById('form');
             const formData = new FormData(form);
             const params = new URLSearchParams(formData);
-            const brandName=formData.get('brandName')||"";
+            const contract_provider = formData.get('contract_provider') || "";
             const customerName=formData.get('customerName')||"";
             const escName=formData.get('escName')||"";
             const address=formData.get('address')||"";
             const proposalDate=formData.get('proposalDate')||"";
             const citySateZip=formData.get('citySateZip')||"";
             const monthlyCharges=formData.get('monthlyCharges')||"";
-            const url = `http://localhost/promnote/pregenerate_pdf.php?${params.toString()}`;
+            const additionalAddresses = formData.get('additionalAddresses') || "";
+            const url = `pregenerate_pdf.php?${params.toString()}`;
             document.getElementById('generatedUrl').innerHTML = `<p>Generated URL: <a href="${url}" target="_blank">${url}</a></p>`;
         }
 
